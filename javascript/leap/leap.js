@@ -1,4 +1,4 @@
-// ES6 syntax
+// ES6 module / class syntax
 export default class Year {
   constructor (y) {
     this.yr = y
@@ -6,9 +6,9 @@ export default class Year {
 
   isLeap () {
     // abc is truthy if not evenly divisible
-    let a = this.yr % 4
-    let b = this.yr % 100
-    let c = this.yr % 400
+    const a = this.yr % 4
+    const b = this.yr % 100
+    const c = this.yr % 400
 
     // divisible by 4
     if (!a) {
@@ -16,9 +16,8 @@ export default class Year {
       if (!b && c) return false
 
       return true
-    } else {
-      // not divisible by 4
-      return false
     }
+    // not divisible by 4
+    return false
   }
 }
