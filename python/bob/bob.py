@@ -2,50 +2,22 @@ import re
 
 
 def hey(phrase):
-    # test for containing only whitespace
-    a = re.search(r'^[\s]+$', phrase)
-    if a or len(phrase) == 0:
+    ''' test phrase to determine output  '''
+    only_whitespace = re.search(r'^[\s]+$', phrase)
+    q_with_number = re.search(r'\d+.*\?$', phrase)
+    q_ends_with_whitespace = re.search(r'\?\s*$', phrase)
+    q_all_caps_with_whitespace = re.search(r'^[A-Z\s]+\?\s*$', phrase)
+    numbers_comma_whitespace = re.search(r'^[0-9\,\s]+$', phrase)
+    everything_not_lower_case = re.search(r'^[^a-z]+[\!\s]*$', phrase)
+
+    if only_whitespace or len(phrase) == 0:
         return 'Fine. Be that way!'
-
-    # test contains number and ends in ?
-    b = re.search(r'\d+.*\?$', phrase)
-    # test ends with ? plus any number of whitespace characters
-    c = re.search(r'\?\s*$', phrase)
-    # test all caps and spaces,  ends in ? plus 0 or more spaces
-    d = re.search(r'^[A-Z\s]{2,}\?\s*$', phrase)
-
-    if b or (c and not d):
+    elif q_with_number or (q_ends_with_whitespace and
+                           not q_all_caps_with_whitespace):
         return 'Sure.'
-
-    if c and d:
+    elif q_ends_with_whitespace and q_all_caps_with_whitespace:
         return "Calm down, I know what I'm doing!"
-
-    # only numbers commas whitespace
-    h = re.search(r'^[0-9\,\s]+$', phrase)
-    # everything other than lower case
-    i = re.search(r'^[^a-z]{2,}\!*\s*$', phrase)
-    if i and not h:
+    elif everything_not_lower_case and not numbers_comma_whitespace:
         return 'Whoa, chill out!'
-
-    # # multiline
-    # e = re.search(r'\n', phrase)
-    # # does phrase contain ?
-    # f = re.search(r'\?', phrase)
-    # # does phrase end with whitespace
-    # g = re.search(r'\s+$', phrase)
-    # # does phrase start with whitespace
-    # j = re.search(r'^\s+', phrase)
-    # # contains ? in middle of statement
-    # k = re.search(r'.+\?.+', phrase)
-    # # ends in a period (statement)
-    # m = re.search(r'.+\.$', phrase)
-    # # ends in an exclamation mark
-    # n = re.search(r'\!$', phrase)
-    # # contains lower case letters
-    # o = re.search(r'[a-z]', phrase)
-
-    # if m or e or j or k or (not f and g) or (n and o):
-    #     return 'Whatever.'
-
-    # these tests above are superflous.
-    return 'Whatever.'
+    else:
+        return 'Whatever.'
