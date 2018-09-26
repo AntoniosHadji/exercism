@@ -19,7 +19,6 @@ class Allergies(object):
         result = []
         score = self.test_score % 256
         for s in range(7, -1, -1):
-            if score >= 2**s:
+            if score & 2**s:
                 result.append(self.allergies[s])
-                score -= 2**s
         return result
