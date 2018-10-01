@@ -1,9 +1,7 @@
 def sum_of_multiples(limit, multiples):
-    result = []
+    result = set()
 
-    for n in range(1, limit):
-        for m in multiples:
-            if n % m == 0 and n not in result:
-                result.append(n)
+    for m in multiples:
+        result = result.union({n for n in range(m, limit, m) if n % m == 0})
 
     return sum(result)
