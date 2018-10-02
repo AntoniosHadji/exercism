@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-int is_isogram(const char phrase[])
+bool is_isogram(const char phrase[])
 {
   return 1;
 }
