@@ -50,7 +50,7 @@
     ]
   },
   "scripts": {
-    "test": "jest --no-cache ./*",
+    "test": "jest --bail --no-cache ./*",
     "watch": "jest --no-cache --watch ./*",
     "lint": "eslint .",
     "lint-test": "eslint . && jest --no-cache ./* "
