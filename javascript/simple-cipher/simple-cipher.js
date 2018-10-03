@@ -1,7 +1,7 @@
 export class Cipher {
   constructor (key) {
-    let reAccept = /^[a-z]+$/
-    if (!reAccept.test(key)) {
+    let reGoodKey = /^[a-z]+$/
+    if (!reGoodKey.test(key)) {
       throw new Error('Bad key')
     }
 
@@ -17,8 +17,9 @@ export class Cipher {
   encode (s) {
     let result = ''
     for (let i = 0; i < s.length; i++) {
-      let shift = this._shift(i)
-      result += String.fromCharCode(this._wrap(s.charCodeAt(i) + shift))
+      result += String.fromCharCode(
+        this._wrap(s.charCodeAt(i) + this._shift(i))
+      )
     }
     return result
   }
@@ -26,8 +27,9 @@ export class Cipher {
   decode (s) {
     let result = ''
     for (let i = 0; i < s.length; i++) {
-      let shift = this._shift(i)
-      result += String.fromCharCode(this._wrap(s.charCodeAt(i) - shift))
+      result += String.fromCharCode(
+        this._wrap(s.charCodeAt(i) - this._shift(i))
+      )
     }
     return result
   }
