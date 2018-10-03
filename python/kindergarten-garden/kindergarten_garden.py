@@ -22,7 +22,4 @@ class Garden(object):
         p.append(rows[1][i*2])
         p.append(rows[1][i*2+1])
 
-        result = []
-        for plant in p:
-            result.append(self._translate[plant])
-        return result
+        return [self._translate[plant] for plant in p]
