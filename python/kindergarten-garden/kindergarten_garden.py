@@ -15,11 +15,11 @@ class Garden(object):
 
     def plants(self, student):
         i = self._students.index(student)
-        rows = self._diagram.split('\n')
-        p = []
-        p.append(rows[0][i*2])
-        p.append(rows[0][i*2+1])
-        p.append(rows[1][i*2])
-        p.append(rows[1][i*2+1])
+        # index of first plant in row 2
+        row2 = self._diagram.index('\n') + 1
+        # students plants in row 1
+        p = self._diagram[i*2:i*2+2]
+        # students plants in row 2
+        p += self._diagram[i*2+row2:i*2+row2+2]
 
         return [self._translate[plant] for plant in p]
