@@ -1,5 +1,6 @@
 export class Cipher {
   constructor (key) {
+    // char code 97-122
     let reGoodKey = /^[a-z]+$/
     if (!reGoodKey.test(key)) {
       throw new Error('Bad key')
@@ -14,34 +15,35 @@ export class Cipher {
     this.key = key
   }
 
-  encode (s) {
+  encode (s, direction) {
     let result = ''
     for (let i = 0; i < s.length; i++) {
       result += String.fromCharCode(
-        this._wrap(s.charCodeAt(i) + this._shift(i))
+        this._wrap(s.charCodeAt(i) + this._shift(i, direction))
       )
     }
     return result
   }
 
   decode (s) {
-    let result = ''
-    for (let i = 0; i < s.length; i++) {
-      result += String.fromCharCode(
-        this._wrap(s.charCodeAt(i) - this._shift(i))
-      )
-    }
-    return result
+    return this.encode(s, 'decode')
   }
 
-  _shift (i) {
+  _shift (i, direction = 'encode') {
     if (i >= this.key.length) {
       i = i % this.key.length
     }
-    return this.key.charCodeAt(i) - 97
+    const shift = this.key.charCodeAt(i) - 97
+    if (direction === 'decode') {
+      return -1 * shift
+    }
+    return shift
   }
 
   _wrap (v) {
+    // this is harder to read than if statement
+    // and more calculation
+    // return (v - 97) >= 0 ? ((v - 97) % 26) + 97 : ((v - 97) % 26) + 123
     if (v < 97) {
       return v + 26
     } else if (v > 122) {
