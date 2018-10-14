@@ -9,7 +9,7 @@ Deliberate practice to deepen my expertise with programming logic and syntax
 waiting for mentor
 
 ### Python
-grade-school
+waiting for mentor
 
 ### Go
 waiting for mentor
