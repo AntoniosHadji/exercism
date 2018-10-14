@@ -11,6 +11,7 @@ class School(object):
         grades = {s[1] for s in self.data}
         for g in grades:
             result += self.grade(g)
+        print([g for g in grades])
         return result
 
     def grade(self, grade_number):
