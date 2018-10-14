@@ -1,3 +1,6 @@
+import itertools
+
+
 class School(object):
 
     def __init__(self):
@@ -7,12 +10,10 @@ class School(object):
         self.data.append((name, grade))
 
     def roster(self):
-        result = []
         grades = {s[1] for s in self.data}
-        for g in grades:
-            result += self.grade(g)
-        print([g for g in grades])
-        return result
+        # grouped is list of lists
+        grouped = [self.grade(g) for g in grades]
+        return list(itertools.chain.from_iterable(grouped))
 
     def grade(self, grade_number):
         return sorted([s[0] for s in self.data if s[1] == grade_number])
