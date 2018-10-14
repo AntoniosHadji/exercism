@@ -22,8 +22,3 @@ leap
 
 ### C
 isogram
-
-<details>
-    <summary>Note to self:</summary>
-    `tree -L 2 -tr` will list folders with most recent underlying directory first.
-</details>
