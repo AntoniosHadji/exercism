@@ -1,12 +1,17 @@
 class School(object):
+
     def __init__(self):
-        pass
+        self.data = []
 
     def add_student(self, name, grade):
-        pass
+        self.data.append((name, grade))
 
     def roster(self):
-        pass
+        result = []
+        grades = {s[1] for s in self.data}
+        for g in grades:
+            result += self.grade(g)
+        return result
 
     def grade(self, grade_number):
-        pass
+        return sorted([s[0] for s in self.data if s[1] == grade_number])
