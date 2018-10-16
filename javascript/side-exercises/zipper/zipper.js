@@ -7,32 +7,34 @@
 // }
 
 export default class Zipper {
-  constructor (t, o, p) {
+  constructor (t, p) {
     this.tree = t
     if (p) {
       this.parent = p
     } else {
       this.parent = null
     }
-
-    if (!o) {
-      this.originalTree = t
-    } else {
-      this.originalTree = o
-    }
   }
 
-  static fromTree (t) {
-    return new Zipper(t)
+  static fromTree (obj) {
+    return new Zipper(obj, null)
   }
 
   toTree () {
-    return this.originalTree
+    let t = this
+    if (t.parent === null) {
+      return this.tree
+    } else {
+      while (t.parent !== null) {
+        t = t.parent
+      }
+      return t.tree
+    }
   }
 
   left () {
     if (this.tree.left) {
-      return new Zipper(this.tree.left, this.originalTree, this)
+      return new Zipper(this.tree.left, this)
     } else {
       return null
     }
@@ -40,7 +42,7 @@ export default class Zipper {
 
   right () {
     if (this.tree.right) {
-      return new Zipper(this.tree.right, this.originalTree, this)
+      return new Zipper(this.tree.right, this)
     } else {
       return null
     }
