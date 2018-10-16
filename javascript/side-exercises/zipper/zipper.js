@@ -1,6 +1,20 @@
+// function bt(value, left, right) {
+//   return {
+//     value,
+//     left,
+//     right,
+//   };
+// }
+
 export default class Zipper {
-  constructor (t, o) {
+  constructor (t, o, p) {
     this.tree = t
+    if (p) {
+      this.parent = p
+    } else {
+      this.parent = null
+    }
+
     if (!o) {
       this.originalTree = t
     } else {
@@ -18,7 +32,7 @@ export default class Zipper {
 
   left () {
     if (this.tree.left) {
-      return new Zipper(this.tree.left, this.originalTree)
+      return new Zipper(this.tree.left, this.originalTree, this)
     } else {
       return null
     }
@@ -26,10 +40,25 @@ export default class Zipper {
 
   right () {
     if (this.tree.right) {
-      return new Zipper(this.tree.right, this.originalTree)
+      return new Zipper(this.tree.right, this.originalTree, this)
     } else {
       return null
     }
+  }
+
+  setValue (v) {
+    this.tree.value = v
+    return this
+  }
+
+  setLeft (o) {
+    this.tree.left = o
+    return this
+  }
+
+  setRight (o) {
+    this.tree.right = o
+    return this
   }
 
   value () {
@@ -41,7 +70,6 @@ export default class Zipper {
   }
 
   up () {
-    // TODO: up must return parent node
-    return null
+    return this.parent
   }
 }
