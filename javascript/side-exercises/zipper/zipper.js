@@ -1,14 +1,6 @@
-// function bt(value, left, right) {
-//   return {
-//     value,
-//     left,
-//     right,
-//   };
-// }
-
 export default class Zipper {
   constructor (t, p) {
-    this.tree = t
+    this.tree = Object.assign({}, t)
     if (p) {
       this.parent = p
     } else {
@@ -22,14 +14,10 @@ export default class Zipper {
 
   toTree () {
     let t = this
-    if (t.parent === null) {
-      return this.tree
-    } else {
-      while (t.parent !== null) {
-        t = t.parent
-      }
-      return t.tree
+    while (t.parent !== null) {
+      t = t.parent
     }
+    return t.tree
   }
 
   left () {
@@ -64,11 +52,7 @@ export default class Zipper {
   }
 
   value () {
-    if (this.tree.value) {
-      return this.tree.value
-    } else {
-      return null
-    }
+    return this.tree.value
   }
 
   up () {

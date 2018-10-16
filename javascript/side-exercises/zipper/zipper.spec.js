@@ -15,9 +15,11 @@ function leaf(value) {
 }
 
 describe('Zipper', () => {
+  const t0 = bt(1, bt(2, null, leaf(3)), leaf(4));
   const t1 = bt(1, bt(2, null, leaf(3)), leaf(4));
   const t2 = bt(1, bt(5, null, leaf(3)), leaf(4));
-  const t3 = bt(1, bt(2, leaf(5), leaf(3)), leaf(4));
+  const t7 = bt(1, bt(6, null, leaf(3)), leaf(4));
+  const t3 = bt(1, bt(2, leaf(9), leaf(3)), leaf(4));
   const t4 = bt(1, leaf(2), leaf(4));
   const t5 = bt(1, bt(2, null, leaf(3)), bt(6, leaf(7), leaf(8)));
   const t6 = bt(1, bt(2, null, leaf(5)), leaf(4));
@@ -26,6 +28,10 @@ describe('Zipper', () => {
   beforeEach(() => {
     zipper = Zipper.fromTree(t1);
   });
+
+  afterEach(() => {
+    expect(t1).toEqual(t0)
+  })
 
   test('data is retained', () => {
     expect(zipper.toTree()).toEqual(t1);
@@ -58,13 +64,13 @@ describe('Zipper', () => {
     expect(zipper.left().setValue(5).toTree()).toEqual(t2);
   });
 
-  test('setValue after traversing up', () => {
-    expect(zipper.left().right().up().setValue(5)
-      .toTree()).toEqual(t2);
+  xtest('setValue after traversing up', () => {
+    expect(zipper.left().right().up().setValue(6)
+      .toTree()).toEqual(t7);
   });
 
-  test('setLeft with leaf', () => {
-    expect(zipper.left().setLeft(leaf(5)).toTree()).toEqual(t3);
+  xtest('setLeft with leaf', () => {
+    expect(zipper.left().setLeft(leaf(9)).toTree()).toEqual(t3);
   });
 
   xtest('setRight with null', () => {
