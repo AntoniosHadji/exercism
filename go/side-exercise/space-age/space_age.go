@@ -13,28 +13,27 @@ package space
 
 type Planet string
 
+var orbitalPeriods = map[Planet]float64{
+	"Earth":   1.0,
+	"Mercury": 0.2408467,
+	"Venus":   0.61519726,
+	"Mars":    1.8808158,
+	"Jupiter": 11.862615,
+	"Saturn":  29.447498,
+	"Uranus":  84.016846,
+	"Neptune": 164.79132,
+}
+
 func Age(seconds float64, planet Planet) float64 {
 	base := seconds / 86400 / 365.25
-	if planet == "Mercury" {
-		return base / 0.2408467
-	} else if planet == "Venus" {
-		return base / 0.61519726
-	} else if planet == "Mars" {
-		return base / 1.8808158
-	} else if planet == "Jupiter" {
-		return base / 11.862615
-	} else if planet == "Saturn" {
-		return base / 29.447498
-	} else if planet == "Uranus" {
-		return base / 84.016846
-	} else if planet == "Neptune" {
-		return base / 164.79132
-	}
 	// base case is earth years
-	return base
+	return base / orbitalPeriods[planet]
 }
 
 /* Go Notes
+This version, although looking more advanced than a series of if else statements,
+is substantially slower on benchmark.  96ns/op vs 37ns/op for if/else if
+
 It is usually clearer and always faster to use the built-in string comparison
 operators ==, <, >, and so on.
 https://golang.org/pkg/strings/#Compare
