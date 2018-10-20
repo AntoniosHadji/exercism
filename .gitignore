@@ -4,5 +4,6 @@ __pycache__/
 # javascript
 node_modules/
 .tern-port
+.tern-project
 # cpp
 build/
