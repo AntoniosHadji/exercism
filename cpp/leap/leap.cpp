@@ -7,15 +7,6 @@ namespace leap {
     bool hundred      = !(year % 100);
     bool four_hundred = !(year % 400);
 
-    if (four) {
-      if (hundred) {
-        if (four_hundred) {
-          return true;
-        }
-      } else {
-        return true;
-      }
-    }
-    return false;
+    return (four && !hundred) || four_hundred;
   }
 }
