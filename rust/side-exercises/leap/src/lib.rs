@@ -3,5 +3,6 @@ pub fn is_leap_year(year: i32) -> bool {
     let hundred: bool         = (year % 100) == 0;
     let four_hundred: bool    = (year % 400) == 0;
 
-    return (four && !hundred) || four_hundred;
+    // return not needed in rust no semicolon returns value
+    four && !hundred || four_hundred
 }
