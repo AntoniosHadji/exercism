@@ -9,16 +9,16 @@ Deliberate practice to deepen my expertise with programming logic and syntax
 pangram
 
 ### Python
-waiting for mentor
+side exercises
 
 ### Go
-waiting for mentor
+Hamming
 
 ### Rust
 pythagorean-triplet
 
 ### C++
-leap
+side exercises
 
 ### C
 isogram
