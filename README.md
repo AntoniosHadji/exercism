@@ -6,7 +6,7 @@ Deliberate practice to deepen my expertise with programming logic and syntax
 ## Next Exercises
 
 ### Javascript
-waiting for mentor
+pangram
 
 ### Python
 waiting for mentor
