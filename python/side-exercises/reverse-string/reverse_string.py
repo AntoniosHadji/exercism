@@ -1,6 +1,3 @@
 def reverse(text=''):
-    r = list()
-    for c in range(len(text)-1, -1, -1):
-        r.append(text[c])
-
+    r = [text[i] for i in reversed(range(len(text)))]
     return ''.join(r)
