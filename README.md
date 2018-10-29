@@ -9,7 +9,7 @@ Deliberate practice to deepen my expertise with programming logic and syntax
 pangram
 
 ### Python
-side exercises
+Saddle Points
 
 ### Go
 Hamming
@@ -18,7 +18,7 @@ Hamming
 pythagorean-triplet
 
 ### C++
-side exercises
+gigasecond
 
 ### C
 isogram
