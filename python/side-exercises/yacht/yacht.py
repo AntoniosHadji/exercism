@@ -45,8 +45,7 @@ def score(dice, category):
 
     if category == FULL_HOUSE:
         for d in set(dice):
-            length = len(list(filter(lambda x: x == d, dice)))
-            if length not in [2, 3]:
+            if dice.count(d) not in [2, 3]:
                 return 0
 
     if category == FOUR_OF_A_KIND:
