@@ -14,21 +14,10 @@ BIG_STRAIGHT = 'big_straight'
 CHOICE = 'choice'
 
 
-def count_dice(dice):
-    counts = {}
-    for d in dice:
-        if d in counts:
-            counts[d] += 1
-        else:
-            counts[d] = 1
-    return counts
-
-
 def four_of_a_kind_score(dice):
-    counts = count_dice(dice)
-    for d, c in counts.items():
-        if c == 4:
-            return c*d
+    for d in set(dice):
+        if len(list(filter(lambda x: x == d, dice))) == 4:
+            return sum(list(filter(lambda x: x == d, dice)))
 
 
 SCORE_FUNCTION = {
@@ -49,12 +38,33 @@ SCORE_FUNCTION = {
 
 def score(dice, category):
     if category == LITTLE_STRAIGHT:
-        if 1 not in dice:
-            return 0
-        if len(dice) is not len(set(dice)):
+        if ((1 not in dice) or
+           (len(dice) is not len(set(dice))) or
+           (6 in dice)):
             return 0
 
     if category == FULL_HOUSE:
-                pass
+        for d in set(dice):
+            length = len(list(filter(lambda x: x == d, dice)))
+            if length not in [2, 3]:
+                return 0
+
+    if category == FOUR_OF_A_KIND:
+        if len(set(dice)) == 1:
+            return 4 * dice[0]
+
+        count = set()
+        for d in set(dice):
+            count.add(len(list(filter(lambda x: x == d, dice))))
+        if count != set([1, 4]):
+            return 0
+
+    if category == BIG_STRAIGHT:
+        if 1 in dice:
+            return 0
+
+    if category == YACHT:
+        if len(set(dice)) != 1:
+            return 0
 
     return SCORE_FUNCTION[category](dice)
