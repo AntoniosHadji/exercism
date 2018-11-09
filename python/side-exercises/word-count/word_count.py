@@ -1,13 +1,8 @@
 import re
+from collections import Counter
 
 
 def word_count(phrase):
-    words = re.split(r'[ ,_\t]', phrase)
-    result = {}
-    for word in words:
-        w = str.lower(word).strip("':.\n!&@$%^&")
-        if w == '':
-            continue
-        result[w] = result.get(w, 0) + 1
-
-    return result
+    words = re.split(r'[ ,_\t\n]', phrase.lower())
+    words = [word.strip("':.!&@$%^&") for word in words]
+    return Counter([word for word in words if word != ''])
