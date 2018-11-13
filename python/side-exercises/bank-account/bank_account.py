@@ -1,7 +1,7 @@
 import threading
 
 
-class BankAccount(object):
+class BankAccount:
     def __init__(self):
         self.lock = threading.Lock()
         self.balance = 0
