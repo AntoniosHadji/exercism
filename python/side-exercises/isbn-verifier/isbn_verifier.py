@@ -6,10 +6,7 @@ def verify(isbn):
     if not re.match(r'^\d{9}[0-9X]$', isbn):
         return False
 
-    a = list(isbn)
-    b = list(range(10, 0, -1))
-
     return sum([
         10 * y if x is 'X' else int(x) * y
-        for x, y in zip(a, b)
+        for x, y in zip(list(isbn), range(10, 0, -1))
     ]) % 11 == 0
