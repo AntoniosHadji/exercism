@@ -7,3 +7,5 @@ node_modules/
 .tern-project
 # cpp
 build/
+# vscode
+.vscode/
