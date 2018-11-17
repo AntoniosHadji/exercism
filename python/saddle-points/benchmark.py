@@ -7,9 +7,5 @@ print(timeit.timeit(cmd, setup=setup, number=1000000))
 
 
 # original timing commit [:f587b86]
-# 5.84843750204891
-# 5.959444281004835
-
-# algorithm #2
 # 4.6083211319637485
 # 4.579655827023089
