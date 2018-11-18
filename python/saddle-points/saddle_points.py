@@ -59,36 +59,37 @@ def saddle_points_v3(matrix):
         return set()
 
     length = len(matrix[0])
-    row_set = set()
-    col_set = set()
+    row_set = list()
+    col_set = list()
 
     # enumerate rows of matrix
     for i, row in enumerate(matrix):
         if len(row) != length:
             raise ValueError('irregular matrix')
         # if value is max in row, it is potential saddle point
-        row_max_index = row.index(max(row))
-        row_set.add((i, row_max_index))
-        if row.count(max(row)) > 1:
+        max_in_row = max(row)
+        row_max_index = row.index(max_in_row)
+        row_set.append((i, row_max_index))
+        if row.count(max_in_row) > 1:
             while True:
                 try:
                     row_max_index += 1
-                    row_set.add((i, row.index(max(row), row_max_index)))
+                    row_set.append((i, row.index(max_in_row, row_max_index)))
                 except ValueError:
                     break
 
-    transpose = [[matrix[j][i] for j in range(len(matrix))]
-                 for i in range(len(matrix[0]))
-                 ]
+    transpose = [list(column) for column in zip(*matrix)]
+
     for i, row in enumerate(transpose):
-        col_min_index = row.index(min(row))
-        col_set.add((col_min_index, i))
-        if row.count(min(row)) > 1:
+        min_in_col = min(row)
+        col_min_index = row.index(min_in_col)
+        col_set.append((col_min_index, i))
+        if row.count(min_in_col) > 1:
             while True:
                 try:
                     col_min_index += 1
-                    col_set.add((row.index(min(row), col_min_index), i))
+                    col_set.append((row.index(min_in_col, col_min_index), i))
                 except ValueError:
                     break
 
-    return row_set & col_set
+    return set(row_set) & set(col_set)
