@@ -13,6 +13,11 @@ cmd = 'saddle_points_v2([[9, 8, 7], [5, 3, 2], [6, 6, 7]])'
 print('v2')
 print(timeit.timeit(cmd, setup=setup, number=1000000))
 
+setup = 'from saddle_points import saddle_points_v3'
+cmd = 'saddle_points_v3([[9, 8, 7], [5, 3, 2], [6, 6, 7]])'
+
+print('v3')
+print(timeit.timeit(cmd, setup=setup, number=1000000))
 
 # run original first
 # original
@@ -42,13 +47,19 @@ m = '''
 setup = 'from saddle_points import saddle_points'
 cmd = 'saddle_points('
 cmd += m
-print('large matrix')
+print('10x10 matrix')
 print(timeit.timeit(cmd, setup=setup))
 
 setup = 'from saddle_points import saddle_points_v2'
 cmd = 'saddle_points_v2('
 cmd += m
-print('large matrix v2')
+print('10x10 matrix v2')
+print(timeit.timeit(cmd, setup=setup))
+
+setup = 'from saddle_points import saddle_points_v3'
+cmd = 'saddle_points_v3('
+cmd += m
+print('10x10 matrix v3')
 print(timeit.timeit(cmd, setup=setup))
 
 # v2
