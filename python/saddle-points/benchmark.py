@@ -2,45 +2,44 @@ import timeit
 import random
 
 
-def test(setup, cmd, label):
+def test(setup, cmd):
+    repeat = 3
+    precision = 3
     t = timeit.Timer(stmt=cmd, setup=setup)
-    r = []
-    r.append(t.autorange())
-    r.append(t.autorange())
-    r.append(t.autorange())
-    r = sorted(r, key=lambda x: x[1])[0]
-    print(f'{label}: {r[0]} loops, {r[1]/r[0]} seconds per loop')
+    number, _ = t.autorange()
+    r = t.repeat(repeat, number)
+    best = min(r)
+    units = {"usec": 1, "msec": 1e3, "sec": 1e6}
+    print(f"{number:>7} loops,", end=' ')
+    usec = best * 1e6 / number
+    scales = [(scale, unit) for unit, scale in units.items()]
+    scales.sort(reverse=True)
+    for scale, time_unit in scales:
+        if usec >= scale:
+            break
+    print("best of %d: %.*g %s per loop" % (repeat, precision,
+                                            usec/scale, time_unit))
+    # print(f'{label}: {r[0]} loops, {r[1]/r[0]} seconds per loop')
 
 
 def new_matrix(n):
     return str([[random.randint(1, n) for _ in range(n)] for _ in range(n)])
 
 
-def run_test(n):
-    print(f'matrix size: {n}')
-    m = new_matrix(n)
-    setup = 'from saddle_points import saddle_points'
-    cmd = f'saddle_points({m})'
-    label = 'v0'
-    test(setup, cmd, label)
-
-    setup = 'from first_attempts import saddle_points_v1'
-    cmd = f'saddle_points_v1({m})'
-    label = 'v1'
-    test(setup, cmd, label)
-
-    setup = 'from first_attempts import saddle_points_v2'
-    cmd = f'saddle_points_v2({m})'
-    label = 'v2'
-    test(setup, cmd, label)
+def run_test():
+    size = [10, 50, 100, 200, 300]
+    labels = ['v0', 'v1']
+    for label in labels:
+        print(f'testing {label}')
+        setup = f'from first_attempts import saddle_points_{label} as saddle_points'  # noqa
+        for n in size:
+            m = new_matrix(n)
+            print(f'{n:>3}', end=' ')
+            cmd = f'saddle_points({m})'
+            test(setup, cmd)
 
 
-run_test(10)
-run_test(50)
-run_test(100)
-run_test(200)
-run_test(300)
-
+run_test()
 
 # test zip vs list comprenhension
 
