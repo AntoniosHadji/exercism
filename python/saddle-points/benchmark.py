@@ -14,13 +14,12 @@ def test(setup, cmd):
     usec = best * 1e6 / number
     scales = [(scale, unit) for unit, scale in units.items()]
     scales.sort(reverse=True)
+    # after break scale, time_unit retain values
     for scale, time_unit in scales:
         if usec >= scale:
             break
-    print("best of %d: %.*g %s per loop" % (repeat, precision,
-                                            usec/scale, time_unit))
-    # print(f'{label}: {r[0]} loops, {r[1]/r[0]} seconds per loop')
 
+    print(f"best of {repeat}: {usec/scale:{precision+1}.{precision}g} {time_unit} per loop")  # noqa
 
 def new_matrix(n):
     return str([[random.randint(1, n) for _ in range(n)] for _ in range(n)])
