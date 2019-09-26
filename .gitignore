@@ -1,4 +1,5 @@
 # python
+*.pyc
 __pycache__/
 .pytest_cache/
 # javascript
@@ -7,5 +8,6 @@ node_modules/
 .tern-project
 # cpp
 build/
+*.out
 # vscode
 .vscode/
