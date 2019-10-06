@@ -12,3 +12,4 @@ build/
 # tools
 .vscode/
 .exercism/
+.solution.json
