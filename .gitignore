@@ -4,6 +4,7 @@ __pycache__/
 .pytest_cache/
 # javascript
 node_modules/
+node_modules
 .tern-port
 .tern-project
 # cpp
