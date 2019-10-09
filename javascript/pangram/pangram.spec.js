@@ -5,7 +5,7 @@ describe('Pangram()', () => {
     expect(isPangram('')).toBe(false);
   });
 
-  xtest('recognizes a perfect lower case pangram', () => {
+  test('recognizes a perfect lower case pangram', () => {
     expect(isPangram('abcdefghijklmnopqrstuvwxyz')).toBe(true);
   });
 

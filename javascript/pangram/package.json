@@ -51,7 +51,7 @@
     ]
   },
   "scripts": {
-    "test": "jest --no-cache ./*",
+    "test": "jest --no-cache --bail ./*",
     "watch": "jest --no-cache --watch ./*",
     "lint": "eslint .",
     "lint-test": "eslint . && jest --no-cache ./* "
