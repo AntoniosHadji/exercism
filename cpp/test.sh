@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 # touch $(basename $(pwd)).cpp
 mkdir -p build
-cd build
+cd build || return
 cmake -G "Unix Makefiles" ..
 make
-cd ../
-rm -rf build
+cd ../ || return
+# rm -rf build
