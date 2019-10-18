@@ -3,17 +3,15 @@ def convert(number):
     has 3 as a factor, add 'Pling' to the result.
     has 5 as a factor, add 'Plang' to the result.
     has 7 as a factor, add 'Plong' to the result.
-    does not have any of 3, 5, or 7 as a factor, the result should be the digits of the number.
+    does not have any of 3, 5, or 7 as a factor,
+    the result should be the digits of the number.
     """
-    result = []
-    if not number % 3:
-        result.append("Pling")
-    if not number % 5:
-        result.append("Plang")
-    if not number % 7:
-        result.append("Plong")
+    data = {
+        3: "Pling",
+        5: "Plang",
+        7: "Plong",
+    }
 
-    if result:
-        return "".join(result)
-    else:
-        return str(number)
+    result = [v for k, v in data.items() if number % k == 0]
+
+    return "".join(result) or str(number)
