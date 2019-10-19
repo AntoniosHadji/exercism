@@ -7,9 +7,8 @@ class Rational(object):
             numer *= -1
             denom *= -1
         gcd = math.gcd(int(numer), int(denom))
-        # division makes value a float
-        self.numer = numer / gcd
-        self.denom = denom / gcd
+        self.numer = numer // gcd
+        self.denom = denom // gcd
 
     def __eq__(self, other):
         return self.numer == other.numer and self.denom == other.denom
