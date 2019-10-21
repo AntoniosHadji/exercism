@@ -1,29 +1,34 @@
 // bob is a chat bot
+// use this instead: https://golang.org/pkg/strings/
 package bob
 
 import "regexp"
 
 // Hey takes a comment and returns a response
 func Hey(remark string) string {
-	var onlyWhitespace = regexp.MustCompile(`^\s+$`)
-	var question = regexp.MustCompile(`.+\?\s*$`)
-	var q_all_caps_with_whitespace = regexp.MustCompile(`^[A-Z\s]+\?\s*$`)
-	var numbers_comma_whitespace = regexp.MustCompile(`^[0-9,\s]+$`)
-	var everything_not_lower_case = regexp.MustCompile(`^[^a-z]+[\!\s]*$`)
 
-	if onlyWhitespace.MatchString(remark) || len(remark) == 0 {
+	switch {
+
+	case regexp.MustCompile(`^\s+$`).MatchString(remark) || len(remark) == 0:
 		return "Fine. Be that way!"
-	} else if q_all_caps_with_whitespace.MatchString(remark) {
+
+	case regexp.MustCompile(`^[A-Z\s]+\?\s*$`).MatchString(remark):
 		return "Calm down, I know what I'm doing!"
-	} else if question.MatchString(remark) {
+
+	case regexp.MustCompile(`.+\?\s*$`).MatchString(remark):
 		return "Sure."
-	} else if numbers_comma_whitespace.MatchString(remark) {
+
+	case regexp.MustCompile(`^[0-9,\s]+$`).MatchString(remark):
 		return "Whatever."
-	} else if everything_not_lower_case.MatchString(remark) {
+
+	case regexp.MustCompile(`^[^a-z]+[\!\s]*$`).MatchString(remark):
 		return "Whoa, chill out!"
-	} else {
+
+	default:
 		return "Whatever."
+
 	}
+
 }
 
 // https://golang.org/doc/effective_go.html#commentary
