@@ -8,7 +8,7 @@ bool is_isogram(const char phrase[])
   int alphabet[26] = {0};
   int index;
 
-  for (unsigned long i=0; i < strlen(phrase); i++) {
+  for (unsigned int i=0; i < strlen(phrase); i++) {
     if (phrase[i] == ' ' || phrase[i] == '-')
       continue;
 
