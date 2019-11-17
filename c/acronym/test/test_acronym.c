@@ -68,7 +68,7 @@ static void test_hyphenated(void)
 
 static void test_all_caps_words(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    char *phrase = "PHP: Hypertext Preprocessor";
    char *expected = "PHP";
    test_abbreviation(phrase, expected);
@@ -76,7 +76,7 @@ static void test_all_caps_words(void)
 
 static void test_empty_string(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    char *phrase = "";
    char *expected = NULL;
    test_abbreviation(phrase, expected);
@@ -84,7 +84,7 @@ static void test_empty_string(void)
 
 static void test_all_words_starting_with_lowercase(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE();
    char *phrase = "for what it's worth";
    char *expected = "FWIW";
    test_abbreviation(phrase, expected);
@@ -92,7 +92,7 @@ static void test_all_words_starting_with_lowercase(void)
 
 static void test_long_abbreviation(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    char *phrase = "Rolling On The Floor Laughing So Hard "
        "That My Dogs Came Over And Licked Me";
    char *expected = "ROTFLSHTMDCOALM";
