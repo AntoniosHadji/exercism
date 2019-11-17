@@ -11,22 +11,25 @@ char *abbreviate(const char *phrase) {
   // '\0' == empty string
   if (phrase == NULL || *phrase == '\0') return NULL;
 
-  // malloc requires free, which is called in test suite
-  // https://en.cppreference.com/w/c/memory/malloc
-  int length = 1;
-  char *acronym = malloc(length * sizeof *acronym);
+  // length will be at least 2 since phrase is not NULL or empty
+  // min size = {char, \0}
+  int length = 2;
+  // calloc requires free, which is called in test suite
+  // allocates memory on the heap, initialized to zeros
+  // https://en.cppreference.com/w/c/memory/calloc
+  char *acronym = calloc(length, sizeof(char));
 
+  // set first character
   acronym[0] = toupper(phrase[0]);
-
-  int index = 1;
 
   while (*phrase++ != '\0') {
     if (isspace(*phrase) || *phrase == '-') {
       // realloc buffer to allow for additional character
       // https://en.cppreference.com/w/c/memory/realloc
-      char *temp = realloc(acronym, ++length * sizeof *acronym);
-      *acronym = *temp;
-      acronym[index++] = toupper(*++phrase);
+      acronym = realloc(acronym, ++length * sizeof(char));
+      // length is now 2 more than next index spot
+      // increment phrase before deference
+      acronym[length - 2] = toupper(*++phrase);
     }
   }
 
