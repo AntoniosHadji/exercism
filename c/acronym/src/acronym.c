@@ -3,6 +3,7 @@
 // NULL in stdlib.h
 #include <ctype.h>
 // isspace in ctype.h
+#include <stdio.h>
 
 // reallocate buffer for return result instead of pre-calculating required length
 // Why: uses only one loop instead of 2;
@@ -18,7 +19,10 @@ char *abbreviate(const char *phrase) {
   // allocates memory on the heap, initialized to zeros
   // https://en.cppreference.com/w/c/memory/calloc
   char *acronym = calloc(length, sizeof(char));
-
+  if(acronym == NULL) {
+      fprintf(stderr, "out of memory\n");
+      exit(EXIT_FAILURE);
+  }
   // set first character
   acronym[0] = toupper(phrase[0]);
 
@@ -27,6 +31,10 @@ char *abbreviate(const char *phrase) {
       // realloc buffer to allow for additional character
       // https://en.cppreference.com/w/c/memory/realloc
       acronym = realloc(acronym, ++length * sizeof(char));
+      if(acronym == NULL) {
+          fprintf(stderr, "out of memory\n");
+          exit(EXIT_FAILURE);
+      }
       // length is now 2 more than next index spot
       // increment phrase before deference
       acronym[length - 2] = toupper(*++phrase);
