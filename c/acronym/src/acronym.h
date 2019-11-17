@@ -1,6 +1,6 @@
 #ifndef ACRONYM_H
 #define ACRONYM_H
 
-char *abbreviate(char *phrase);
+char *abbreviate(const char *phrase);
 
 #endif
