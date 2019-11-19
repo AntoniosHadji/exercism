@@ -14,6 +14,6 @@ resistor_band_t color_code(resistor_band_t color) {
 
 // returning array object is same as pointer to initial array element
 // must cast to explicitly discard const qualifier
-resistor_band_t* colors() {
-  return  (resistor_band_t*) COLORS;
-}
+// resistor_band_t* colors() {
+//   return  (resistor_band_t*) COLORS;
+// }

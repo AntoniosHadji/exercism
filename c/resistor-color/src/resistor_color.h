@@ -17,12 +17,15 @@
 typedef int resistor_band_t;
 
 resistor_band_t color_code(resistor_band_t color);
-resistor_band_t* colors();
 
 // must be static to be declared in header
 static const resistor_band_t COLORS[] = {
   BLACK, BROWN, RED, ORANGE, YELLOW,
   GREEN, BLUE, VIOLET, GREY, WHITE
 };
+
+// resistor_band_t* colors();
+// constant function can be defined as macro
+#define colors() COLORS
 
 #endif
