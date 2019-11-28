@@ -1,4 +1,5 @@
 
       //       // without subscript, returns whole string
       //       // -1, +1 give previous/next array value via pointer
+      // input_text is pointer to char
       //       printf("prior:c:next => [%c]:[%c]:[%c]\n", (input_text-1)[0], c, (input_text+1)[0]);
