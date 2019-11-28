@@ -1,0 +1,2216 @@
+c: [w]
+current_word: w
+c: [o]
+current_word: wo
+c: [r]
+current_word: wor
+c: [d]
+current_word: word
+increment_word_index: [word]
+word: [word] text: [] count: [0]
+word: [] text: [word] count: [1]
+test/test_word_count.c:581:test_word_count_one_word:PASS
+c: [o]
+current_word: o
+c: [n]
+current_word: on
+c: [e]
+current_word: one
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [one]
+word: [one] text: [] count: [0]
+word: [] text: [one] count: [1]
+unique count: 1
+c: [o]
+current_word: o
+c: [f]
+current_word: of
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [of]
+word: [of] text: [one] count: [1]
+word: [of] text: [] count: [0]
+word: [] text: [of] count: [1]
+unique count: 2
+c: [e]
+current_word: e
+c: [a]
+current_word: ea
+c: [c]
+current_word: eac
+c: [h]
+current_word: each
+increment_word_index: [each]
+word: [each] text: [one] count: [1]
+word: [each] text: [of] count: [1]
+word: [each] text: [] count: [0]
+word: [] text: [each] count: [1]
+test/test_word_count.c:582:test_word_count_one_of_each_word:PASS
+c: [o]
+current_word: o
+c: [n]
+current_word: on
+c: [e]
+current_word: one
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [one]
+word: [one] text: [] count: [0]
+word: [] text: [one] count: [1]
+unique count: 1
+c: [f]
+current_word: f
+c: [i]
+current_word: fi
+c: [s]
+current_word: fis
+c: [h]
+current_word: fish
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [fish]
+word: [fish] text: [one] count: [1]
+word: [fish] text: [] count: [0]
+word: [] text: [fish] count: [1]
+unique count: 2
+c: [t]
+current_word: t
+c: [w]
+current_word: tw
+c: [o]
+current_word: two
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [two]
+word: [two] text: [one] count: [1]
+word: [two] text: [fish] count: [1]
+word: [two] text: [] count: [0]
+word: [] text: [two] count: [1]
+unique count: 3
+c: [f]
+current_word: f
+c: [i]
+current_word: fi
+c: [s]
+current_word: fis
+c: [h]
+current_word: fish
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [fish]
+word: [fish] text: [one] count: [1]
+word: [fish] text: [fish] count: [1]
+c: [r]
+current_word: r
+c: [e]
+current_word: re
+c: [d]
+current_word: red
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [red]
+word: [red] text: [one] count: [1]
+word: [red] text: [fish] count: [2]
+word: [red] text: [two] count: [1]
+word: [red] text: [] count: [0]
+word: [] text: [red] count: [1]
+unique count: 4
+c: [f]
+current_word: f
+c: [i]
+current_word: fi
+c: [s]
+current_word: fis
+c: [h]
+current_word: fish
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [fish]
+word: [fish] text: [one] count: [1]
+word: [fish] text: [fish] count: [2]
+c: [b]
+current_word: b
+c: [l]
+current_word: bl
+c: [u]
+current_word: blu
+c: [e]
+current_word: blue
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [blue]
+word: [blue] text: [one] count: [1]
+word: [blue] text: [fish] count: [3]
+word: [blue] text: [two] count: [1]
+word: [blue] text: [red] count: [1]
+word: [blue] text: [] count: [0]
+word: [] text: [blue] count: [1]
+unique count: 5
+c: [f]
+current_word: f
+c: [i]
+current_word: fi
+c: [s]
+current_word: fis
+c: [h]
+current_word: fish
+increment_word_index: [fish]
+word: [fish] text: [one] count: [1]
+word: [fish] text: [fish] count: [3]
+test/test_word_count.c:583:test_word_count_multiple_occurrences_of_a_word:PASS
+c: [o]
+current_word: o
+c: [n]
+current_word: on
+c: [e]
+current_word: one
+c: [,]
+tested for space or punc: [,]
+increment_word_index: [one]
+word: [one] text: [] count: [0]
+word: [] text: [one] count: [1]
+unique count: 1
+c: [t]
+current_word: t
+c: [w]
+current_word: tw
+c: [o]
+current_word: two
+c: [,]
+tested for space or punc: [,]
+increment_word_index: [two]
+word: [two] text: [one] count: [1]
+word: [two] text: [] count: [0]
+word: [] text: [two] count: [1]
+unique count: 2
+c: [t]
+current_word: t
+c: [h]
+current_word: th
+c: [r]
+current_word: thr
+c: [e]
+current_word: thre
+c: [e]
+current_word: three
+increment_word_index: [three]
+word: [three] text: [one] count: [1]
+word: [three] text: [two] count: [1]
+word: [three] text: [] count: [0]
+word: [] text: [three] count: [1]
+test/test_word_count.c:584:test_word_count_handles_cramped_lists:PASS
+c: [o]
+current_word: o
+c: [n]
+current_word: on
+c: [e]
+current_word: one
+c: [,]
+tested for space or punc: [,]
+increment_word_index: [one]
+word: [one] text: [] count: [0]
+word: [] text: [one] count: [1]
+unique count: 1
+c: [
+]
+tested for space or punc: [
+]
+increment_word_index: []
+c: [t]
+current_word: t
+c: [w]
+current_word: tw
+c: [o]
+current_word: two
+c: [,]
+tested for space or punc: [,]
+increment_word_index: [two]
+word: [two] text: [one] count: [1]
+word: [two] text: [] count: [0]
+word: [] text: [two] count: [1]
+unique count: 2
+c: [
+]
+tested for space or punc: [
+]
+increment_word_index: []
+c: [t]
+current_word: t
+c: [h]
+current_word: th
+c: [r]
+current_word: thr
+c: [e]
+current_word: thre
+c: [e]
+current_word: three
+increment_word_index: [three]
+word: [three] text: [one] count: [1]
+word: [three] text: [two] count: [1]
+word: [three] text: [] count: [0]
+word: [] text: [three] count: [1]
+test/test_word_count.c:585:test_word_count_handles_expanded_lists:PASS
+c: [c]
+current_word: c
+c: [a]
+current_word: ca
+c: [r]
+current_word: car
+c: [:]
+tested for space or punc: [:]
+increment_word_index: [car]
+word: [car] text: [] count: [0]
+word: [] text: [car] count: [1]
+unique count: 1
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: []
+c: [c]
+current_word: c
+c: [a]
+current_word: ca
+c: [r]
+current_word: car
+c: [p]
+current_word: carp
+c: [e]
+current_word: carpe
+c: [t]
+current_word: carpet
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [carpet]
+word: [carpet] text: [car] count: [1]
+word: [carpet] text: [] count: [0]
+word: [] text: [carpet] count: [1]
+unique count: 2
+c: [a]
+current_word: a
+c: [s]
+current_word: as
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [as]
+word: [as] text: [car] count: [1]
+word: [as] text: [carpet] count: [1]
+word: [as] text: [] count: [0]
+word: [] text: [as] count: [1]
+unique count: 3
+c: [j]
+current_word: j
+c: [a]
+current_word: ja
+c: [v]
+current_word: jav
+c: [a]
+current_word: java
+c: [:]
+tested for space or punc: [:]
+increment_word_index: [java]
+word: [java] text: [car] count: [1]
+word: [java] text: [carpet] count: [1]
+word: [java] text: [as] count: [1]
+word: [java] text: [] count: [0]
+word: [] text: [java] count: [1]
+unique count: 4
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: []
+c: [j]
+current_word: j
+c: [a]
+current_word: ja
+c: [v]
+current_word: jav
+c: [a]
+current_word: java
+c: [s]
+current_word: javas
+c: [c]
+current_word: javasc
+c: [r]
+current_word: javascr
+c: [i]
+current_word: javascri
+c: [p]
+current_word: javascrip
+c: [t]
+current_word: javascript
+c: [!]
+tested for space or punc: [!]
+increment_word_index: [javascript]
+word: [javascript] text: [car] count: [1]
+word: [javascript] text: [carpet] count: [1]
+word: [javascript] text: [as] count: [1]
+word: [javascript] text: [java] count: [1]
+word: [javascript] text: [] count: [0]
+word: [] text: [javascript] count: [1]
+unique count: 5
+c: [!]
+tested for space or punc: [!]
+increment_word_index: []
+c: [&]
+tested for space or punc: [&]
+increment_word_index: []
+c: [@]
+tested for space or punc: [@]
+increment_word_index: []
+c: [$]
+tested for space or punc: [$]
+increment_word_index: []
+c: [%]
+tested for space or punc: [%]
+increment_word_index: []
+c: [^]
+tested for space or punc: [^]
+increment_word_index: []
+c: [&]
+tested for space or punc: [&]
+increment_word_index: []
+increment_word_index: []
+test/test_word_count.c:586:test_word_count_ignore_punctuation:PASS
+c: [t]
+current_word: t
+c: [e]
+current_word: te
+c: [s]
+current_word: tes
+c: [t]
+current_word: test
+c: [i]
+current_word: testi
+c: [n]
+current_word: testin
+c: [g]
+current_word: testing
+c: [,]
+tested for space or punc: [,]
+increment_word_index: [testing]
+word: [testing] text: [] count: [0]
+word: [] text: [testing] count: [1]
+unique count: 1
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: []
+c: [1]
+current_word: 1
+c: [,]
+tested for space or punc: [,]
+increment_word_index: [1]
+word: [1] text: [testing] count: [1]
+word: [1] text: [] count: [0]
+word: [] text: [1] count: [1]
+unique count: 2
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: []
+c: [2]
+current_word: 2
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [2]
+word: [2] text: [testing] count: [1]
+word: [2] text: [1] count: [1]
+word: [2] text: [] count: [0]
+word: [] text: [2] count: [1]
+unique count: 3
+c: [t]
+current_word: t
+c: [e]
+current_word: te
+c: [s]
+current_word: tes
+c: [t]
+current_word: test
+c: [i]
+current_word: testi
+c: [n]
+current_word: testin
+c: [g]
+current_word: testing
+increment_word_index: [testing]
+word: [testing] text: [testing] count: [1]
+test/test_word_count.c:587:test_word_count_include_numbers:PASS
+c: [g]
+current_word: g
+c: [o]
+current_word: go
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [go]
+word: [go] text: [] count: [0]
+word: [] text: [go] count: [1]
+unique count: 1
+c: [g]
+current_word: g
+c: [o]
+current_word: go
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [go]
+word: [go] text: [go] count: [1]
+c: [g]
+current_word: g
+c: [o]
+current_word: go
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [go]
+word: [go] text: [go] count: [2]
+c: [s]
+current_word: s
+c: [t]
+current_word: st
+c: [o]
+current_word: sto
+c: [p]
+current_word: stop
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [stop]
+word: [stop] text: [go] count: [3]
+word: [stop] text: [] count: [0]
+word: [] text: [stop] count: [1]
+unique count: 2
+c: [s]
+current_word: s
+c: [t]
+current_word: st
+c: [o]
+current_word: sto
+c: [p]
+current_word: stop
+increment_word_index: [stop]
+word: [stop] text: [go] count: [3]
+word: [stop] text: [stop] count: [1]
+test/test_word_count.c:588:test_word_count_normalize_case:PASS
+c: [f]
+current_word: f
+c: [i]
+current_word: fi
+c: [r]
+current_word: fir
+c: [s]
+current_word: firs
+c: [t]
+current_word: first
+c: [:]
+tested for space or punc: [:]
+increment_word_index: [first]
+word: [first] text: [] count: [0]
+word: [] text: [first] count: [1]
+unique count: 1
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: []
+c: [d]
+current_word: d
+c: [o]
+current_word: do
+c: [n]
+current_word: don
+c: [']
+current_word: don'
+c: [t]
+current_word: don't
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [don't]
+word: [don't] text: [first] count: [1]
+word: [don't] text: [] count: [0]
+word: [] text: [don't] count: [1]
+unique count: 2
+c: [l]
+current_word: l
+c: [a]
+current_word: la
+c: [u]
+current_word: lau
+c: [g]
+current_word: laug
+c: [h]
+current_word: laugh
+c: [.]
+tested for space or punc: [.]
+increment_word_index: [laugh]
+word: [laugh] text: [first] count: [1]
+word: [laugh] text: [don't] count: [1]
+word: [laugh] text: [] count: [0]
+word: [] text: [laugh] count: [1]
+unique count: 3
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: []
+c: [t]
+current_word: t
+c: [h]
+current_word: th
+c: [e]
+current_word: the
+c: [n]
+current_word: then
+c: [:]
+tested for space or punc: [:]
+increment_word_index: [then]
+word: [then] text: [first] count: [1]
+word: [then] text: [don't] count: [1]
+word: [then] text: [laugh] count: [1]
+word: [then] text: [] count: [0]
+word: [] text: [then] count: [1]
+unique count: 4
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: []
+c: [d]
+current_word: d
+c: [o]
+current_word: do
+c: [n]
+current_word: don
+c: [']
+current_word: don'
+c: [t]
+current_word: don't
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [don't]
+word: [don't] text: [first] count: [1]
+word: [don't] text: [don't] count: [1]
+c: [c]
+current_word: c
+c: [r]
+current_word: cr
+c: [y]
+current_word: cry
+c: [.]
+tested for space or punc: [.]
+increment_word_index: [cry]
+word: [cry] text: [first] count: [1]
+word: [cry] text: [don't] count: [2]
+word: [cry] text: [laugh] count: [1]
+word: [cry] text: [then] count: [1]
+word: [cry] text: [] count: [0]
+word: [] text: [cry] count: [1]
+unique count: 5
+increment_word_index: []
+test/test_word_count.c:589:test_word_count_with_apostrophes:PASS
+c: [j]
+current_word: j
+c: [o]
+current_word: jo
+c: [e]
+current_word: joe
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [joe]
+word: [joe] text: [] count: [0]
+word: [] text: [joe] count: [1]
+unique count: 1
+c: [c]
+current_word: c
+c: [a]
+current_word: ca
+c: [n]
+current_word: can
+c: [']
+current_word: can'
+c: [t]
+current_word: can't
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [can't]
+word: [can't] text: [joe] count: [1]
+word: [can't] text: [] count: [0]
+word: [] text: [can't] count: [1]
+unique count: 2
+c: [t]
+current_word: t
+c: [e]
+current_word: te
+c: [l]
+current_word: tel
+c: [l]
+current_word: tell
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [tell]
+word: [tell] text: [joe] count: [1]
+word: [tell] text: [can't] count: [1]
+word: [tell] text: [] count: [0]
+word: [] text: [tell] count: [1]
+unique count: 3
+c: [b]
+current_word: b
+c: [e]
+current_word: be
+c: [t]
+current_word: bet
+c: [w]
+current_word: betw
+c: [e]
+current_word: betwe
+c: [e]
+current_word: betwee
+c: [n]
+current_word: between
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [between]
+word: [between] text: [joe] count: [1]
+word: [between] text: [can't] count: [1]
+word: [between] text: [tell] count: [1]
+word: [between] text: [] count: [0]
+word: [] text: [between] count: [1]
+unique count: 4
+c: [']
+current_word: '
+c: [l]
+current_word: 'l
+c: [a]
+current_word: 'la
+c: [r]
+current_word: 'lar
+c: [g]
+current_word: 'larg
+c: [e]
+current_word: 'large
+c: [']
+current_word: 'large'
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: ['large']
+word: ['large'] text: [joe] count: [1]
+word: ['large'] text: [can't] count: [1]
+word: ['large'] text: [tell] count: [1]
+word: ['large'] text: [between] count: [1]
+word: ['large'] text: [] count: [0]
+word: [] text: ['large'] count: [1]
+unique count: 5
+c: [a]
+current_word: a
+c: [n]
+current_word: an
+c: [d]
+current_word: and
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [and]
+word: [and] text: [joe] count: [1]
+word: [and] text: [can't] count: [1]
+word: [and] text: [tell] count: [1]
+word: [and] text: [between] count: [1]
+word: [and] text: ['large'] count: [1]
+word: [and] text: [] count: [0]
+word: [] text: [and] count: [1]
+unique count: 6
+c: [l]
+current_word: l
+c: [a]
+current_word: la
+c: [r]
+current_word: lar
+c: [g]
+current_word: larg
+c: [e]
+current_word: large
+c: [.]
+tested for space or punc: [.]
+increment_word_index: [large]
+word: [large] text: [joe] count: [1]
+word: [large] text: [can't] count: [1]
+word: [large] text: [tell] count: [1]
+word: [large] text: [between] count: [1]
+word: [large] text: ['large'] count: [1]
+word: [large] text: [and] count: [1]
+word: [large] text: [] count: [0]
+word: [] text: [large] count: [1]
+unique count: 7
+increment_word_index: []
+test/test_word_count.c:26:test_word_count_with_quotation:FAIL: Expected 6 Was 7
+c: [o]
+current_word: o
+c: [l]
+current_word: ol
+c: [l]
+current_word: oll
+c: [y]
+current_word: olly
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [olly]
+word: [olly] text: [] count: [0]
+word: [] text: [olly] count: [1]
+unique count: 1
+c: [o]
+current_word: o
+c: [l]
+current_word: ol
+c: [l]
+current_word: oll
+c: [y]
+current_word: olly
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [olly]
+word: [olly] text: [olly] count: [1]
+c: [i]
+current_word: i
+c: [n]
+current_word: in
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [in]
+word: [in] text: [olly] count: [2]
+word: [in] text: [] count: [0]
+word: [] text: [in] count: [1]
+unique count: 2
+c: [c]
+current_word: c
+c: [o]
+current_word: co
+c: [m]
+current_word: com
+c: [e]
+current_word: come
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [come]
+word: [come] text: [olly] count: [2]
+word: [come] text: [in] count: [1]
+word: [come] text: [] count: [0]
+word: [] text: [come] count: [1]
+unique count: 3
+c: [f]
+current_word: f
+c: [r]
+current_word: fr
+c: [e]
+current_word: fre
+c: [e]
+current_word: free
+increment_word_index: [free]
+word: [free] text: [olly] count: [2]
+word: [free] text: [in] count: [1]
+word: [free] text: [come] count: [1]
+word: [free] text: [] count: [0]
+word: [] text: [free] count: [1]
+test/test_word_count.c:591:test_word_count_from_example:PASS
+c: [l]
+current_word: l
+c: [o]
+current_word: lo
+c: [o]
+current_word: loo
+c: [k]
+current_word: look
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [look]
+word: [look] text: [] count: [0]
+word: [] text: [look] count: [1]
+unique count: 1
+c: [t]
+current_word: t
+c: [h]
+current_word: th
+c: [i]
+current_word: thi
+c: [s]
+current_word: this
+c: [i]
+current_word: thisi
+c: [s]
+current_word: thisis
+c: [a]
+current_word: thisisa
+c: [v]
+current_word: thisisav
+c: [e]
+current_word: thisisave
+c: [e]
+current_word: thisisavee
+c: [e]
+current_word: thisisaveee
+c: [e]
+current_word: thisisaveeee
+c: [e]
+current_word: thisisaveeeee
+c: [e]
+current_word: thisisaveeeeee
+c: [r]
+current_word: thisisaveeeeeer
+c: [y]
+current_word: thisisaveeeeeery
+c: [l]
+current_word: thisisaveeeeeeryl
+c: [o]
+current_word: thisisaveeeeeerylo
+c: [n]
+current_word: thisisaveeeeeerylon
+c: [g]
+current_word: thisisaveeeeeerylong
+c: [w]
+current_word: thisisaveeeeeerylongw
+c: [o]
+current_word: thisisaveeeeeerylongwo
+c: [r]
+current_word: thisisaveeeeeerylongwor
+c: [d]
+current_word: thisisaveeeeeerylongword
+c: [t]
+current_word: thisisaveeeeeerylongwordt
+c: [y]
+current_word: thisisaveeeeeerylongwordty
+c: [p]
+current_word: thisisaveeeeeerylongwordtyp
+c: [e]
+current_word: thisisaveeeeeerylongwordtype
+c: [d]
+current_word: thisisaveeeeeerylongwordtyped
+c: [w]
+current_word: thisisaveeeeeerylongwordtypedw
+c: [i]
+current_word: thisisaveeeeeerylongwordtypedwi
+c: [t]
+current_word: thisisaveeeeeerylongwordtypedwit
+c: [h]
+current_word: thisisaveeeeeerylongwordtypedwith
+c: [o]
+current_word: thisisaveeeeeerylongwordtypedwitho
+c: [u]
+current_word: thisisaveeeeeerylongwordtypedwithou
+c: [t]
+current_word: thisisaveeeeeerylongwordtypedwithout
+c: [u]
+current_word: thisisaveeeeeerylongwordtypedwithoutu
+c: [s]
+current_word: thisisaveeeeeerylongwordtypedwithoutus
+c: [i]
+current_word: thisisaveeeeeerylongwordtypedwithoutusi
+c: [n]
+current_word: thisisaveeeeeerylongwordtypedwithoutusin
+c: [g]
+current_word: thisisaveeeeeerylongwordtypedwithoutusing
+c: [a]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinga
+c: [n]
+current_word: thisisaveeeeeerylongwordtypedwithoutusingan
+c: [y]
+current_word: thisisaveeeeeerylongwordtypedwithoutusingany
+c: [s]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinganys
+c: [p]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinganysp
+c: [a]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinganyspa
+c: [c]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinganyspac
+c: [e]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinganyspace
+c: [s]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinganyspaces
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [thisisaveeeeeerylongwordtypedwithoutusinganyspaces]
+word: [thisisaveeeeeerylongwordtypedwithoutusinganyspaces] text: [look] count: [1]
+word: [thisisaveeeeeerylongwordtypedwithoutusinganyspaces] text: [] count: [0]
+word: [] text: [thisisaveeeeeerylongwordtypedwithoutusinganyspaces] count: [1]
+unique count: 2
+c: [a]
+current_word: a
+c: [n]
+current_word: an
+c: [d]
+current_word: and
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [and]
+word: [and] text: [look] count: [1]
+word: [and] text: [thisisaveeeeeerylongwordtypedwithoutusinganyspaces] count: [1]
+word: [and] text: [] count: [0]
+word: [] text: [and] count: [1]
+unique count: 3
+c: [l]
+current_word: l
+c: [o]
+current_word: lo
+c: [o]
+current_word: loo
+c: [k]
+current_word: look
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [look]
+word: [look] text: [look] count: [1]
+c: [a]
+current_word: a
+c: [g]
+current_word: ag
+c: [a]
+current_word: aga
+c: [i]
+current_word: agai
+c: [n]
+current_word: again
+c: [,]
+tested for space or punc: [,]
+increment_word_index: [again]
+word: [again] text: [look] count: [2]
+word: [again] text: [thisisaveeeeeerylongwordtypedwithoutusinganyspaces] count: [1]
+word: [again] text: [and] count: [1]
+word: [again] text: [] count: [0]
+word: [] text: [again] count: [1]
+unique count: 4
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: []
+c: [t]
+current_word: t
+c: [h]
+current_word: th
+c: [i]
+current_word: thi
+c: [s]
+current_word: this
+c: [i]
+current_word: thisi
+c: [s]
+current_word: thisis
+c: [a]
+current_word: thisisa
+c: [v]
+current_word: thisisav
+c: [e]
+current_word: thisisave
+c: [e]
+current_word: thisisavee
+c: [e]
+current_word: thisisaveee
+c: [e]
+current_word: thisisaveeee
+c: [e]
+current_word: thisisaveeeee
+c: [e]
+current_word: thisisaveeeeee
+c: [r]
+current_word: thisisaveeeeeer
+c: [y]
+current_word: thisisaveeeeeery
+c: [l]
+current_word: thisisaveeeeeeryl
+c: [o]
+current_word: thisisaveeeeeerylo
+c: [n]
+current_word: thisisaveeeeeerylon
+c: [g]
+current_word: thisisaveeeeeerylong
+c: [w]
+current_word: thisisaveeeeeerylongw
+c: [o]
+current_word: thisisaveeeeeerylongwo
+c: [r]
+current_word: thisisaveeeeeerylongwor
+c: [d]
+current_word: thisisaveeeeeerylongword
+c: [t]
+current_word: thisisaveeeeeerylongwordt
+c: [y]
+current_word: thisisaveeeeeerylongwordty
+c: [p]
+current_word: thisisaveeeeeerylongwordtyp
+c: [e]
+current_word: thisisaveeeeeerylongwordtype
+c: [d]
+current_word: thisisaveeeeeerylongwordtyped
+c: [w]
+current_word: thisisaveeeeeerylongwordtypedw
+c: [i]
+current_word: thisisaveeeeeerylongwordtypedwi
+c: [t]
+current_word: thisisaveeeeeerylongwordtypedwit
+c: [h]
+current_word: thisisaveeeeeerylongwordtypedwith
+c: [o]
+current_word: thisisaveeeeeerylongwordtypedwitho
+c: [u]
+current_word: thisisaveeeeeerylongwordtypedwithou
+c: [t]
+current_word: thisisaveeeeeerylongwordtypedwithout
+c: [u]
+current_word: thisisaveeeeeerylongwordtypedwithoutu
+c: [s]
+current_word: thisisaveeeeeerylongwordtypedwithoutus
+c: [i]
+current_word: thisisaveeeeeerylongwordtypedwithoutusi
+c: [n]
+current_word: thisisaveeeeeerylongwordtypedwithoutusin
+c: [g]
+current_word: thisisaveeeeeerylongwordtypedwithoutusing
+c: [a]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinga
+c: [n]
+current_word: thisisaveeeeeerylongwordtypedwithoutusingan
+c: [y]
+current_word: thisisaveeeeeerylongwordtypedwithoutusingany
+c: [s]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinganys
+c: [p]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinganysp
+c: [a]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinganyspa
+c: [c]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinganyspac
+c: [e]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinganyspace
+c: [s]
+current_word: thisisaveeeeeerylongwordtypedwithoutusinganyspaces
+increment_word_index: [thisisaveeeeeerylongwordtypedwithoutusinganyspaces]
+word: [thisisaveeeeeerylongwordtypedwithoutusinganyspaces] text: [look] count: [2]
+word: [thisisaveeeeeerylongwordtypedwithoutusinganyspaces] text: [thisisaveeeeeerylongwordtypedwithoutusinganyspaces] count: [1]
+test/test_word_count.c:592:test_max_length_word:PASS
+c: [l]
+current_word: l
+c: [o]
+current_word: lo
+c: [o]
+current_word: loo
+c: [k]
+current_word: look
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [look]
+word: [look] text: [] count: [0]
+word: [] text: [look] count: [1]
+unique count: 1
+c: [t]
+current_word: t
+c: [h]
+current_word: th
+c: [i]
+current_word: thi
+c: [s]
+current_word: this
+c: [i]
+current_word: thisi
+c: [s]
+current_word: thisis
+c: [a]
+current_word: thisisa
+c: [n]
+current_word: thisisan
+c: [e]
+current_word: thisisane
+c: [x]
+current_word: thisisanex
+c: [c]
+current_word: thisisanexc
+c: [e]
+current_word: thisisanexce
+c: [s]
+current_word: thisisanexces
+c: [s]
+current_word: thisisanexcess
+c: [i]
+current_word: thisisanexcessi
+c: [v]
+current_word: thisisanexcessiv
+c: [e]
+current_word: thisisanexcessive
+c: [l]
+current_word: thisisanexcessivel
+c: [y]
+current_word: thisisanexcessively
+c: [l]
+current_word: thisisanexcessivelyl
+c: [o]
+current_word: thisisanexcessivelylo
+c: [n]
+current_word: thisisanexcessivelylon
+c: [g]
+current_word: thisisanexcessivelylong
+c: [w]
+current_word: thisisanexcessivelylongw
+c: [o]
+current_word: thisisanexcessivelylongwo
+c: [r]
+current_word: thisisanexcessivelylongwor
+c: [d]
+current_word: thisisanexcessivelylongword
+c: [t]
+current_word: thisisanexcessivelylongwordt
+c: [h]
+current_word: thisisanexcessivelylongwordth
+c: [a]
+current_word: thisisanexcessivelylongwordtha
+c: [t]
+current_word: thisisanexcessivelylongwordthat
+c: [s]
+current_word: thisisanexcessivelylongwordthats
+c: [o]
+current_word: thisisanexcessivelylongwordthatso
+c: [m]
+current_word: thisisanexcessivelylongwordthatsom
+c: [e]
+current_word: thisisanexcessivelylongwordthatsome
+c: [o]
+current_word: thisisanexcessivelylongwordthatsomeo
+c: [n]
+current_word: thisisanexcessivelylongwordthatsomeon
+c: [e]
+current_word: thisisanexcessivelylongwordthatsomeone
+c: [t]
+current_word: thisisanexcessivelylongwordthatsomeonet
+c: [y]
+current_word: thisisanexcessivelylongwordthatsomeonety
+c: [p]
+current_word: thisisanexcessivelylongwordthatsomeonetyp
+c: [e]
+current_word: thisisanexcessivelylongwordthatsomeonetype
+c: [d]
+current_word: thisisanexcessivelylongwordthatsomeonetyped
+c: [w]
+current_word: thisisanexcessivelylongwordthatsomeonetypedw
+c: [i]
+current_word: thisisanexcessivelylongwordthatsomeonetypedwi
+c: [t]
+current_word: thisisanexcessivelylongwordthatsomeonetypedwit
+c: [h]
+current_word: thisisanexcessivelylongwordthatsomeonetypedwith
+c: [o]
+current_word: thisisanexcessivelylongwordthatsomeonetypedwitho
+c: [u]
+current_word: thisisanexcessivelylongwordthatsomeonetypedwithou
+c: [t]
+current_word: thisisanexcessivelylongwordthatsomeonetypedwithout
+c: [u]
+current_word: thisisanexcessivelylongwordthatsomeonetypedwithoutu
+c: [s]
+test/test_word_count.c:593:test_excessive_length_word:PASS
+c: [o]
+current_word: o
+c: [n]
+current_word: on
+c: [c]
+current_word: onc
+c: [e]
+current_word: once
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [once]
+word: [once] text: [] count: [0]
+word: [] text: [once] count: [1]
+unique count: 1
+c: [u]
+current_word: u
+c: [p]
+current_word: up
+c: [o]
+current_word: upo
+c: [n]
+current_word: upon
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [upon]
+word: [upon] text: [once] count: [1]
+word: [upon] text: [] count: [0]
+word: [] text: [upon] count: [1]
+unique count: 2
+c: [a]
+current_word: a
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [a]
+word: [a] text: [once] count: [1]
+word: [a] text: [upon] count: [1]
+word: [a] text: [] count: [0]
+word: [] text: [a] count: [1]
+unique count: 3
+c: [t]
+current_word: t
+c: [i]
+current_word: ti
+c: [m]
+current_word: tim
+c: [e]
+current_word: time
+c: [,]
+tested for space or punc: [,]
+increment_word_index: [time]
+word: [time] text: [once] count: [1]
+word: [time] text: [upon] count: [1]
+word: [time] text: [a] count: [1]
+word: [time] text: [] count: [0]
+word: [] text: [time] count: [1]
+unique count: 4
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: []
+c: [a]
+current_word: a
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [a]
+word: [a] text: [once] count: [1]
+word: [a] text: [upon] count: [1]
+word: [a] text: [a] count: [1]
+c: [l]
+current_word: l
+c: [o]
+current_word: lo
+c: [n]
+current_word: lon
+c: [g]
+current_word: long
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [long]
+word: [long] text: [once] count: [1]
+word: [long] text: [upon] count: [1]
+word: [long] text: [a] count: [2]
+word: [long] text: [time] count: [1]
+word: [long] text: [] count: [0]
+word: [] text: [long] count: [1]
+unique count: 5
+c: [w]
+current_word: w
+c: [h]
+current_word: wh
+c: [i]
+current_word: whi
+c: [l]
+current_word: whil
+c: [e]
+current_word: while
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [while]
+word: [while] text: [once] count: [1]
+word: [while] text: [upon] count: [1]
+word: [while] text: [a] count: [2]
+word: [while] text: [time] count: [1]
+word: [while] text: [long] count: [1]
+word: [while] text: [] count: [0]
+word: [] text: [while] count: [1]
+unique count: 6
+c: [i]
+current_word: i
+c: [n]
+current_word: in
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [in]
+word: [in] text: [once] count: [1]
+word: [in] text: [upon] count: [1]
+word: [in] text: [a] count: [2]
+word: [in] text: [time] count: [1]
+word: [in] text: [long] count: [1]
+word: [in] text: [while] count: [1]
+word: [in] text: [] count: [0]
+word: [] text: [in] count: [1]
+unique count: 7
+c: [t]
+current_word: t
+c: [h]
+current_word: th
+c: [e]
+current_word: the
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [the]
+word: [the] text: [once] count: [1]
+word: [the] text: [upon] count: [1]
+word: [the] text: [a] count: [2]
+word: [the] text: [time] count: [1]
+word: [the] text: [long] count: [1]
+word: [the] text: [while] count: [1]
+word: [the] text: [in] count: [1]
+word: [the] text: [] count: [0]
+word: [] text: [the] count: [1]
+unique count: 8
+c: [p]
+current_word: p
+c: [a]
+current_word: pa
+c: [s]
+current_word: pas
+c: [t]
+current_word: past
+c: [,]
+tested for space or punc: [,]
+increment_word_index: [past]
+word: [past] text: [once] count: [1]
+word: [past] text: [upon] count: [1]
+word: [past] text: [a] count: [2]
+word: [past] text: [time] count: [1]
+word: [past] text: [long] count: [1]
+word: [past] text: [while] count: [1]
+word: [past] text: [in] count: [1]
+word: [past] text: [the] count: [1]
+word: [past] text: [] count: [0]
+word: [] text: [past] count: [1]
+unique count: 9
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: []
+c: [t]
+current_word: t
+c: [h]
+current_word: th
+c: [e]
+current_word: the
+c: [r]
+current_word: ther
+c: [e]
+current_word: there
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [there]
+word: [there] text: [once] count: [1]
+word: [there] text: [upon] count: [1]
+word: [there] text: [a] count: [2]
+word: [there] text: [time] count: [1]
+word: [there] text: [long] count: [1]
+word: [there] text: [while] count: [1]
+word: [there] text: [in] count: [1]
+word: [there] text: [the] count: [1]
+word: [there] text: [past] count: [1]
+word: [there] text: [] count: [0]
+word: [] text: [there] count: [1]
+unique count: 10
+c: [l]
+current_word: l
+c: [i]
+current_word: li
+c: [v]
+current_word: liv
+c: [e]
+current_word: live
+c: [d]
+current_word: lived
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [lived]
+word: [lived] text: [once] count: [1]
+word: [lived] text: [upon] count: [1]
+word: [lived] text: [a] count: [2]
+word: [lived] text: [time] count: [1]
+word: [lived] text: [long] count: [1]
+word: [lived] text: [while] count: [1]
+word: [lived] text: [in] count: [1]
+word: [lived] text: [the] count: [1]
+word: [lived] text: [past] count: [1]
+word: [lived] text: [there] count: [1]
+word: [lived] text: [] count: [0]
+word: [] text: [lived] count: [1]
+unique count: 11
+c: [a]
+current_word: a
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [a]
+word: [a] text: [once] count: [1]
+word: [a] text: [upon] count: [1]
+word: [a] text: [a] count: [2]
+c: [s]
+current_word: s
+c: [t]
+current_word: st
+c: [r]
+current_word: str
+c: [a]
+current_word: stra
+c: [n]
+current_word: stran
+c: [g]
+current_word: strang
+c: [e]
+current_word: strange
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [strange]
+word: [strange] text: [once] count: [1]
+word: [strange] text: [upon] count: [1]
+word: [strange] text: [a] count: [3]
+word: [strange] text: [time] count: [1]
+word: [strange] text: [long] count: [1]
+word: [strange] text: [while] count: [1]
+word: [strange] text: [in] count: [1]
+word: [strange] text: [the] count: [1]
+word: [strange] text: [past] count: [1]
+word: [strange] text: [there] count: [1]
+word: [strange] text: [lived] count: [1]
+word: [strange] text: [] count: [0]
+word: [] text: [strange] count: [1]
+unique count: 12
+c: [l]
+current_word: l
+c: [i]
+current_word: li
+c: [t]
+current_word: lit
+c: [t]
+current_word: litt
+c: [l]
+current_word: littl
+c: [e]
+current_word: little
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [little]
+word: [little] text: [once] count: [1]
+word: [little] text: [upon] count: [1]
+word: [little] text: [a] count: [3]
+word: [little] text: [time] count: [1]
+word: [little] text: [long] count: [1]
+word: [little] text: [while] count: [1]
+word: [little] text: [in] count: [1]
+word: [little] text: [the] count: [1]
+word: [little] text: [past] count: [1]
+word: [little] text: [there] count: [1]
+word: [little] text: [lived] count: [1]
+word: [little] text: [strange] count: [1]
+word: [little] text: [] count: [0]
+word: [] text: [little] count: [1]
+unique count: 13
+c: [m]
+current_word: m
+c: [a]
+current_word: ma
+c: [n]
+current_word: man
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [man]
+word: [man] text: [once] count: [1]
+word: [man] text: [upon] count: [1]
+word: [man] text: [a] count: [3]
+word: [man] text: [time] count: [1]
+word: [man] text: [long] count: [1]
+word: [man] text: [while] count: [1]
+word: [man] text: [in] count: [1]
+word: [man] text: [the] count: [1]
+word: [man] text: [past] count: [1]
+word: [man] text: [there] count: [1]
+word: [man] text: [lived] count: [1]
+word: [man] text: [strange] count: [1]
+word: [man] text: [little] count: [1]
+word: [man] text: [] count: [0]
+word: [] text: [man] count: [1]
+unique count: 14
+c: [w]
+current_word: w
+c: [h]
+current_word: wh
+c: [o]
+current_word: who
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [who]
+word: [who] text: [once] count: [1]
+word: [who] text: [upon] count: [1]
+word: [who] text: [a] count: [3]
+word: [who] text: [time] count: [1]
+word: [who] text: [long] count: [1]
+word: [who] text: [while] count: [1]
+word: [who] text: [in] count: [1]
+word: [who] text: [the] count: [1]
+word: [who] text: [past] count: [1]
+word: [who] text: [there] count: [1]
+word: [who] text: [lived] count: [1]
+word: [who] text: [strange] count: [1]
+word: [who] text: [little] count: [1]
+word: [who] text: [man] count: [1]
+word: [who] text: [] count: [0]
+word: [] text: [who] count: [1]
+unique count: 15
+c: [c]
+current_word: c
+c: [o]
+current_word: co
+c: [u]
+current_word: cou
+c: [l]
+current_word: coul
+c: [d]
+current_word: could
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [could]
+word: [could] text: [once] count: [1]
+word: [could] text: [upon] count: [1]
+word: [could] text: [a] count: [3]
+word: [could] text: [time] count: [1]
+word: [could] text: [long] count: [1]
+word: [could] text: [while] count: [1]
+word: [could] text: [in] count: [1]
+word: [could] text: [the] count: [1]
+word: [could] text: [past] count: [1]
+word: [could] text: [there] count: [1]
+word: [could] text: [lived] count: [1]
+word: [could] text: [strange] count: [1]
+word: [could] text: [little] count: [1]
+word: [could] text: [man] count: [1]
+word: [could] text: [who] count: [1]
+word: [could] text: [] count: [0]
+word: [] text: [could] count: [1]
+unique count: 16
+c: [s]
+current_word: s
+c: [p]
+current_word: sp
+c: [i]
+current_word: spi
+c: [n]
+current_word: spin
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [spin]
+word: [spin] text: [once] count: [1]
+word: [spin] text: [upon] count: [1]
+word: [spin] text: [a] count: [3]
+word: [spin] text: [time] count: [1]
+word: [spin] text: [long] count: [1]
+word: [spin] text: [while] count: [1]
+word: [spin] text: [in] count: [1]
+word: [spin] text: [the] count: [1]
+word: [spin] text: [past] count: [1]
+word: [spin] text: [there] count: [1]
+word: [spin] text: [lived] count: [1]
+word: [spin] text: [strange] count: [1]
+word: [spin] text: [little] count: [1]
+word: [spin] text: [man] count: [1]
+word: [spin] text: [who] count: [1]
+word: [spin] text: [could] count: [1]
+word: [spin] text: [] count: [0]
+word: [] text: [spin] count: [1]
+unique count: 17
+c: [s]
+current_word: s
+c: [t]
+current_word: st
+c: [r]
+current_word: str
+c: [a]
+current_word: stra
+c: [w]
+current_word: straw
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [straw]
+word: [straw] text: [once] count: [1]
+word: [straw] text: [upon] count: [1]
+word: [straw] text: [a] count: [3]
+word: [straw] text: [time] count: [1]
+word: [straw] text: [long] count: [1]
+word: [straw] text: [while] count: [1]
+word: [straw] text: [in] count: [1]
+word: [straw] text: [the] count: [1]
+word: [straw] text: [past] count: [1]
+word: [straw] text: [there] count: [1]
+word: [straw] text: [lived] count: [1]
+word: [straw] text: [strange] count: [1]
+word: [straw] text: [little] count: [1]
+word: [straw] text: [man] count: [1]
+word: [straw] text: [who] count: [1]
+word: [straw] text: [could] count: [1]
+word: [straw] text: [spin] count: [1]
+word: [straw] text: [] count: [0]
+word: [] text: [straw] count: [1]
+unique count: 18
+c: [i]
+current_word: i
+c: [n]
+current_word: in
+c: [t]
+current_word: int
+c: [o]
+current_word: into
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [into]
+word: [into] text: [once] count: [1]
+word: [into] text: [upon] count: [1]
+word: [into] text: [a] count: [3]
+word: [into] text: [time] count: [1]
+word: [into] text: [long] count: [1]
+word: [into] text: [while] count: [1]
+word: [into] text: [in] count: [1]
+word: [into] text: [the] count: [1]
+word: [into] text: [past] count: [1]
+word: [into] text: [there] count: [1]
+word: [into] text: [lived] count: [1]
+word: [into] text: [strange] count: [1]
+word: [into] text: [little] count: [1]
+word: [into] text: [man] count: [1]
+word: [into] text: [who] count: [1]
+word: [into] text: [could] count: [1]
+word: [into] text: [spin] count: [1]
+word: [into] text: [straw] count: [1]
+word: [into] text: [] count: [0]
+word: [] text: [into] count: [1]
+unique count: 19
+c: [g]
+current_word: g
+c: [o]
+current_word: go
+c: [l]
+current_word: gol
+c: [d]
+current_word: gold
+increment_word_index: [gold]
+word: [gold] text: [once] count: [1]
+word: [gold] text: [upon] count: [1]
+word: [gold] text: [a] count: [3]
+word: [gold] text: [time] count: [1]
+word: [gold] text: [long] count: [1]
+word: [gold] text: [while] count: [1]
+word: [gold] text: [in] count: [1]
+word: [gold] text: [the] count: [1]
+word: [gold] text: [past] count: [1]
+word: [gold] text: [there] count: [1]
+word: [gold] text: [lived] count: [1]
+word: [gold] text: [strange] count: [1]
+word: [gold] text: [little] count: [1]
+word: [gold] text: [man] count: [1]
+word: [gold] text: [who] count: [1]
+word: [gold] text: [could] count: [1]
+word: [gold] text: [spin] count: [1]
+word: [gold] text: [straw] count: [1]
+word: [gold] text: [into] count: [1]
+word: [gold] text: [] count: [0]
+word: [] text: [gold] count: [1]
+test/test_word_count.c:594:test_max_number_words:PASS
+c: [o]
+current_word: o
+c: [n]
+current_word: on
+c: [c]
+current_word: onc
+c: [e]
+current_word: once
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [once]
+word: [once] text: [] count: [0]
+word: [] text: [once] count: [1]
+unique count: 1
+c: [u]
+current_word: u
+c: [p]
+current_word: up
+c: [o]
+current_word: upo
+c: [n]
+current_word: upon
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [upon]
+word: [upon] text: [once] count: [1]
+word: [upon] text: [] count: [0]
+word: [] text: [upon] count: [1]
+unique count: 2
+c: [a]
+current_word: a
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [a]
+word: [a] text: [once] count: [1]
+word: [a] text: [upon] count: [1]
+word: [a] text: [] count: [0]
+word: [] text: [a] count: [1]
+unique count: 3
+c: [t]
+current_word: t
+c: [i]
+current_word: ti
+c: [m]
+current_word: tim
+c: [e]
+current_word: time
+c: [,]
+tested for space or punc: [,]
+increment_word_index: [time]
+word: [time] text: [once] count: [1]
+word: [time] text: [upon] count: [1]
+word: [time] text: [a] count: [1]
+word: [time] text: [] count: [0]
+word: [] text: [time] count: [1]
+unique count: 4
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: []
+c: [a]
+current_word: a
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [a]
+word: [a] text: [once] count: [1]
+word: [a] text: [upon] count: [1]
+word: [a] text: [a] count: [1]
+c: [l]
+current_word: l
+c: [o]
+current_word: lo
+c: [n]
+current_word: lon
+c: [g]
+current_word: long
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [long]
+word: [long] text: [once] count: [1]
+word: [long] text: [upon] count: [1]
+word: [long] text: [a] count: [2]
+word: [long] text: [time] count: [1]
+word: [long] text: [] count: [0]
+word: [] text: [long] count: [1]
+unique count: 5
+c: [w]
+current_word: w
+c: [h]
+current_word: wh
+c: [i]
+current_word: whi
+c: [l]
+current_word: whil
+c: [e]
+current_word: while
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [while]
+word: [while] text: [once] count: [1]
+word: [while] text: [upon] count: [1]
+word: [while] text: [a] count: [2]
+word: [while] text: [time] count: [1]
+word: [while] text: [long] count: [1]
+word: [while] text: [] count: [0]
+word: [] text: [while] count: [1]
+unique count: 6
+c: [i]
+current_word: i
+c: [n]
+current_word: in
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [in]
+word: [in] text: [once] count: [1]
+word: [in] text: [upon] count: [1]
+word: [in] text: [a] count: [2]
+word: [in] text: [time] count: [1]
+word: [in] text: [long] count: [1]
+word: [in] text: [while] count: [1]
+word: [in] text: [] count: [0]
+word: [] text: [in] count: [1]
+unique count: 7
+c: [t]
+current_word: t
+c: [h]
+current_word: th
+c: [e]
+current_word: the
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [the]
+word: [the] text: [once] count: [1]
+word: [the] text: [upon] count: [1]
+word: [the] text: [a] count: [2]
+word: [the] text: [time] count: [1]
+word: [the] text: [long] count: [1]
+word: [the] text: [while] count: [1]
+word: [the] text: [in] count: [1]
+word: [the] text: [] count: [0]
+word: [] text: [the] count: [1]
+unique count: 8
+c: [p]
+current_word: p
+c: [a]
+current_word: pa
+c: [s]
+current_word: pas
+c: [t]
+current_word: past
+c: [,]
+tested for space or punc: [,]
+increment_word_index: [past]
+word: [past] text: [once] count: [1]
+word: [past] text: [upon] count: [1]
+word: [past] text: [a] count: [2]
+word: [past] text: [time] count: [1]
+word: [past] text: [long] count: [1]
+word: [past] text: [while] count: [1]
+word: [past] text: [in] count: [1]
+word: [past] text: [the] count: [1]
+word: [past] text: [] count: [0]
+word: [] text: [past] count: [1]
+unique count: 9
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: []
+c: [t]
+current_word: t
+c: [h]
+current_word: th
+c: [e]
+current_word: the
+c: [r]
+current_word: ther
+c: [e]
+current_word: there
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [there]
+word: [there] text: [once] count: [1]
+word: [there] text: [upon] count: [1]
+word: [there] text: [a] count: [2]
+word: [there] text: [time] count: [1]
+word: [there] text: [long] count: [1]
+word: [there] text: [while] count: [1]
+word: [there] text: [in] count: [1]
+word: [there] text: [the] count: [1]
+word: [there] text: [past] count: [1]
+word: [there] text: [] count: [0]
+word: [] text: [there] count: [1]
+unique count: 10
+c: [l]
+current_word: l
+c: [i]
+current_word: li
+c: [v]
+current_word: liv
+c: [e]
+current_word: live
+c: [d]
+current_word: lived
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [lived]
+word: [lived] text: [once] count: [1]
+word: [lived] text: [upon] count: [1]
+word: [lived] text: [a] count: [2]
+word: [lived] text: [time] count: [1]
+word: [lived] text: [long] count: [1]
+word: [lived] text: [while] count: [1]
+word: [lived] text: [in] count: [1]
+word: [lived] text: [the] count: [1]
+word: [lived] text: [past] count: [1]
+word: [lived] text: [there] count: [1]
+word: [lived] text: [] count: [0]
+word: [] text: [lived] count: [1]
+unique count: 11
+c: [a]
+current_word: a
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [a]
+word: [a] text: [once] count: [1]
+word: [a] text: [upon] count: [1]
+word: [a] text: [a] count: [2]
+c: [s]
+current_word: s
+c: [t]
+current_word: st
+c: [r]
+current_word: str
+c: [a]
+current_word: stra
+c: [n]
+current_word: stran
+c: [g]
+current_word: strang
+c: [e]
+current_word: strange
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [strange]
+word: [strange] text: [once] count: [1]
+word: [strange] text: [upon] count: [1]
+word: [strange] text: [a] count: [3]
+word: [strange] text: [time] count: [1]
+word: [strange] text: [long] count: [1]
+word: [strange] text: [while] count: [1]
+word: [strange] text: [in] count: [1]
+word: [strange] text: [the] count: [1]
+word: [strange] text: [past] count: [1]
+word: [strange] text: [there] count: [1]
+word: [strange] text: [lived] count: [1]
+word: [strange] text: [] count: [0]
+word: [] text: [strange] count: [1]
+unique count: 12
+c: [l]
+current_word: l
+c: [i]
+current_word: li
+c: [t]
+current_word: lit
+c: [t]
+current_word: litt
+c: [l]
+current_word: littl
+c: [e]
+current_word: little
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [little]
+word: [little] text: [once] count: [1]
+word: [little] text: [upon] count: [1]
+word: [little] text: [a] count: [3]
+word: [little] text: [time] count: [1]
+word: [little] text: [long] count: [1]
+word: [little] text: [while] count: [1]
+word: [little] text: [in] count: [1]
+word: [little] text: [the] count: [1]
+word: [little] text: [past] count: [1]
+word: [little] text: [there] count: [1]
+word: [little] text: [lived] count: [1]
+word: [little] text: [strange] count: [1]
+word: [little] text: [] count: [0]
+word: [] text: [little] count: [1]
+unique count: 13
+c: [m]
+current_word: m
+c: [a]
+current_word: ma
+c: [n]
+current_word: man
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [man]
+word: [man] text: [once] count: [1]
+word: [man] text: [upon] count: [1]
+word: [man] text: [a] count: [3]
+word: [man] text: [time] count: [1]
+word: [man] text: [long] count: [1]
+word: [man] text: [while] count: [1]
+word: [man] text: [in] count: [1]
+word: [man] text: [the] count: [1]
+word: [man] text: [past] count: [1]
+word: [man] text: [there] count: [1]
+word: [man] text: [lived] count: [1]
+word: [man] text: [strange] count: [1]
+word: [man] text: [little] count: [1]
+word: [man] text: [] count: [0]
+word: [] text: [man] count: [1]
+unique count: 14
+c: [w]
+current_word: w
+c: [h]
+current_word: wh
+c: [o]
+current_word: who
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [who]
+word: [who] text: [once] count: [1]
+word: [who] text: [upon] count: [1]
+word: [who] text: [a] count: [3]
+word: [who] text: [time] count: [1]
+word: [who] text: [long] count: [1]
+word: [who] text: [while] count: [1]
+word: [who] text: [in] count: [1]
+word: [who] text: [the] count: [1]
+word: [who] text: [past] count: [1]
+word: [who] text: [there] count: [1]
+word: [who] text: [lived] count: [1]
+word: [who] text: [strange] count: [1]
+word: [who] text: [little] count: [1]
+word: [who] text: [man] count: [1]
+word: [who] text: [] count: [0]
+word: [] text: [who] count: [1]
+unique count: 15
+c: [c]
+current_word: c
+c: [o]
+current_word: co
+c: [u]
+current_word: cou
+c: [l]
+current_word: coul
+c: [d]
+current_word: could
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [could]
+word: [could] text: [once] count: [1]
+word: [could] text: [upon] count: [1]
+word: [could] text: [a] count: [3]
+word: [could] text: [time] count: [1]
+word: [could] text: [long] count: [1]
+word: [could] text: [while] count: [1]
+word: [could] text: [in] count: [1]
+word: [could] text: [the] count: [1]
+word: [could] text: [past] count: [1]
+word: [could] text: [there] count: [1]
+word: [could] text: [lived] count: [1]
+word: [could] text: [strange] count: [1]
+word: [could] text: [little] count: [1]
+word: [could] text: [man] count: [1]
+word: [could] text: [who] count: [1]
+word: [could] text: [] count: [0]
+word: [] text: [could] count: [1]
+unique count: 16
+c: [s]
+current_word: s
+c: [p]
+current_word: sp
+c: [i]
+current_word: spi
+c: [n]
+current_word: spin
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [spin]
+word: [spin] text: [once] count: [1]
+word: [spin] text: [upon] count: [1]
+word: [spin] text: [a] count: [3]
+word: [spin] text: [time] count: [1]
+word: [spin] text: [long] count: [1]
+word: [spin] text: [while] count: [1]
+word: [spin] text: [in] count: [1]
+word: [spin] text: [the] count: [1]
+word: [spin] text: [past] count: [1]
+word: [spin] text: [there] count: [1]
+word: [spin] text: [lived] count: [1]
+word: [spin] text: [strange] count: [1]
+word: [spin] text: [little] count: [1]
+word: [spin] text: [man] count: [1]
+word: [spin] text: [who] count: [1]
+word: [spin] text: [could] count: [1]
+word: [spin] text: [] count: [0]
+word: [] text: [spin] count: [1]
+unique count: 17
+c: [s]
+current_word: s
+c: [t]
+current_word: st
+c: [r]
+current_word: str
+c: [a]
+current_word: stra
+c: [w]
+current_word: straw
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [straw]
+word: [straw] text: [once] count: [1]
+word: [straw] text: [upon] count: [1]
+word: [straw] text: [a] count: [3]
+word: [straw] text: [time] count: [1]
+word: [straw] text: [long] count: [1]
+word: [straw] text: [while] count: [1]
+word: [straw] text: [in] count: [1]
+word: [straw] text: [the] count: [1]
+word: [straw] text: [past] count: [1]
+word: [straw] text: [there] count: [1]
+word: [straw] text: [lived] count: [1]
+word: [straw] text: [strange] count: [1]
+word: [straw] text: [little] count: [1]
+word: [straw] text: [man] count: [1]
+word: [straw] text: [who] count: [1]
+word: [straw] text: [could] count: [1]
+word: [straw] text: [spin] count: [1]
+word: [straw] text: [] count: [0]
+word: [] text: [straw] count: [1]
+unique count: 18
+c: [i]
+current_word: i
+c: [n]
+current_word: in
+c: [t]
+current_word: int
+c: [o]
+current_word: into
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [into]
+word: [into] text: [once] count: [1]
+word: [into] text: [upon] count: [1]
+word: [into] text: [a] count: [3]
+word: [into] text: [time] count: [1]
+word: [into] text: [long] count: [1]
+word: [into] text: [while] count: [1]
+word: [into] text: [in] count: [1]
+word: [into] text: [the] count: [1]
+word: [into] text: [past] count: [1]
+word: [into] text: [there] count: [1]
+word: [into] text: [lived] count: [1]
+word: [into] text: [strange] count: [1]
+word: [into] text: [little] count: [1]
+word: [into] text: [man] count: [1]
+word: [into] text: [who] count: [1]
+word: [into] text: [could] count: [1]
+word: [into] text: [spin] count: [1]
+word: [into] text: [straw] count: [1]
+word: [into] text: [] count: [0]
+word: [] text: [into] count: [1]
+unique count: 19
+c: [p]
+current_word: p
+c: [u]
+current_word: pu
+c: [r]
+current_word: pur
+c: [e]
+current_word: pure
+c: [ ]
+tested for space or punc: [ ]
+increment_word_index: [pure]
+word: [pure] text: [once] count: [1]
+word: [pure] text: [upon] count: [1]
+word: [pure] text: [a] count: [3]
+word: [pure] text: [time] count: [1]
+word: [pure] text: [long] count: [1]
+word: [pure] text: [while] count: [1]
+word: [pure] text: [in] count: [1]
+word: [pure] text: [the] count: [1]
+word: [pure] text: [past] count: [1]
+word: [pure] text: [there] count: [1]
+word: [pure] text: [lived] count: [1]
+word: [pure] text: [strange] count: [1]
+word: [pure] text: [little] count: [1]
+word: [pure] text: [man] count: [1]
+word: [pure] text: [who] count: [1]
+word: [pure] text: [could] count: [1]
+word: [pure] text: [spin] count: [1]
+word: [pure] text: [straw] count: [1]
+word: [pure] text: [into] count: [1]
+word: [pure] text: [] count: [0]
+word: [] text: [pure] count: [1]
+unique count: 20
+c: [g]
+current_word: g
+c: [o]
+current_word: go
+c: [l]
+current_word: gol
+c: [d]
+current_word: gold
+c: [.]
+tested for space or punc: [.]
+increment_word_index: [gold]
+word: [gold] text: [once] count: [1]
+word: [gold] text: [upon] count: [1]
+word: [gold] text: [a] count: [3]
+word: [gold] text: [time] count: [1]
+word: [gold] text: [long] count: [1]
+word: [gold] text: [while] count: [1]
+word: [gold] text: [in] count: [1]
+word: [gold] text: [the] count: [1]
+word: [gold] text: [past] count: [1]
+word: [gold] text: [there] count: [1]
+word: [gold] text: [lived] count: [1]
+word: [gold] text: [strange] count: [1]
+word: [gold] text: [little] count: [1]
+word: [gold] text: [man] count: [1]
+word: [gold] text: [who] count: [1]
+word: [gold] text: [could] count: [1]
+word: [gold] text: [spin] count: [1]
+word: [gold] text: [straw] count: [1]
+word: [gold] text: [into] count: [1]
+word: [gold] text: [pure] count: [1]
+test/test_word_count.c:595:test_excessive_number_words:PASS
+
+-----------------------
+15 Tests 1 Failures 0 Ignored 
+FAIL
+makefile:21: recipe for target 'test' failed

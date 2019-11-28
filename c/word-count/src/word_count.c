@@ -28,7 +28,9 @@ int word_count(const char *input_text, word_count_word_t * words) {
     if (isspace(c) || (ispunct(c) && c != '\'')) {
       printf("tested for space or punc: [%c]\n", c);
       // add or increment count
-      if (increment_word_index(current_word, words) == NEW_WORD_FOUND) {
+      int rc = increment_word_index(current_word, words);
+      if (rc == EXCESSIVE_NUMBER_OF_WORDS) return EXCESSIVE_NUMBER_OF_WORDS;
+      if (rc == NEW_WORD_FOUND) {
         unique_words++;
         printf("unique count: %d\n", unique_words);
       }
@@ -36,6 +38,7 @@ int word_count(const char *input_text, word_count_word_t * words) {
       i = 0;
     } else {
       //copy char to temp word
+      if (strlen(current_word) > MAX_WORD_LENGTH) return EXCESSIVE_LENGTH_WORD;
       current_word[i++] = c;
       current_word[i] = '\0';
       printf("current_word: %s\n", current_word);

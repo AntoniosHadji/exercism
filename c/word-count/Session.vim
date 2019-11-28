@@ -2,11 +2,11 @@ let SessionLoad = 1
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
-inoremap <silent> <Plug>(ale_show_completion_menu) 
-cnoremap <silent> <Plug>(ale_show_completion_menu) <Nop>
-inoremap <silent> <Plug>(ale_complete) :ALEComplete
-inoremap <C-Tab> 	
 imap <S-Tab> <Plug>SuperTabBackward
+inoremap <C-Tab> 	
+inoremap <silent> <Plug>(ale_complete) :ALEComplete
+cnoremap <silent> <Plug>(ale_show_completion_menu) <Nop>
+inoremap <silent> <Plug>(ale_show_completion_menu) 
 inoremap <C-U> u
 imap <Down> <Down>
 imap <Up> <Up>
@@ -19,57 +19,57 @@ nnoremap <silent>  :noh
 nnoremap <silent>  :TmuxNavigatePrevious
 nnoremap   za
 map Q q
-map \swp <Plug>SaveWinPosn
-map \rwp <Plug>RestoreWinPosn
 nmap <silent> \ig <Plug>IndentGuidesToggle
+map \rwp <Plug>RestoreWinPosn
+map \swp <Plug>SaveWinPosn
 nnoremap \g :YcmCompleter GoTo
-nmap gx <Plug>NetrwBrowseX
 vmap gx <Plug>NetrwBrowseXVis
-nmap <silent> <Plug>SaveWinPosn :call SaveWinPosn()
-nmap <silent> <Plug>RestoreWinPosn :call RestoreWinPosn()
-nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))
-vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
-nnoremap <silent> <Plug>(ale_show_completion_menu) :call ale#completion#RestoreCompletionOptions()
-vnoremap <silent> <Plug>(ale_show_completion_menu) <Nop>
-onoremap <silent> <Plug>(ale_show_completion_menu) <Nop>
-nnoremap <silent> <Plug>(ale_previous) :ALEPrevious
-nnoremap <silent> <Plug>(ale_previous_wrap) :ALEPreviousWrap
-nnoremap <silent> <Plug>(ale_previous_error) :ALEPrevious -error
-nnoremap <silent> <Plug>(ale_previous_wrap_error) :ALEPrevious -wrap -error
-nnoremap <silent> <Plug>(ale_previous_warning) :ALEPrevious -warning
-nnoremap <silent> <Plug>(ale_previous_wrap_warning) :ALEPrevious -wrap -warning
-nnoremap <silent> <Plug>(ale_next) :ALENext
-nnoremap <silent> <Plug>(ale_next_wrap) :ALENextWrap
-nnoremap <silent> <Plug>(ale_next_error) :ALENext -error
-nnoremap <silent> <Plug>(ale_next_wrap_error) :ALENext -wrap -error
-nnoremap <silent> <Plug>(ale_next_warning) :ALENext -warning
-nnoremap <silent> <Plug>(ale_next_wrap_warning) :ALENext -wrap -warning
-nnoremap <silent> <Plug>(ale_first) :ALEFirst
-nnoremap <silent> <Plug>(ale_last) :ALELast
-nnoremap <silent> <Plug>(ale_toggle) :ALEToggle
-nnoremap <silent> <Plug>(ale_enable) :ALEEnable
-nnoremap <silent> <Plug>(ale_disable) :ALEDisable
-nnoremap <silent> <Plug>(ale_reset) :ALEReset
-nnoremap <silent> <Plug>(ale_toggle_buffer) :ALEToggleBuffer
-nnoremap <silent> <Plug>(ale_enable_buffer) :ALEEnableBuffer
-nnoremap <silent> <Plug>(ale_disable_buffer) :ALEDisableBuffer
-nnoremap <silent> <Plug>(ale_reset_buffer) :ALEResetBuffer
-nnoremap <silent> <Plug>(ale_lint) :ALELint
-nnoremap <silent> <Plug>(ale_detail) :ALEDetail
-nnoremap <silent> <Plug>(ale_fix) :ALEFix
-nnoremap <silent> <Plug>(ale_go_to_definition) :ALEGoToDefinition
-nnoremap <silent> <Plug>(ale_go_to_definition_in_tab) :ALEGoToDefinitionInTab
-nnoremap <silent> <Plug>(ale_go_to_definition_in_split) :ALEGoToDefinitionInSplit
-nnoremap <silent> <Plug>(ale_go_to_definition_in_vsplit) :ALEGoToDefinitionInVSplit
-nnoremap <silent> <Plug>(ale_go_to_type_definition) :ALEGoToTypeDefinition
-nnoremap <silent> <Plug>(ale_go_to_type_definition_in_tab) :ALEGoToTypeDefinitionInTab
-nnoremap <silent> <Plug>(ale_go_to_type_definition_in_split) :ALEGoToTypeDefinitionInSplit
-nnoremap <silent> <Plug>(ale_go_to_type_definition_in_vsplit) :ALEGoToTypeDefinitionInVSplit
-nnoremap <silent> <Plug>(ale_find_references) :ALEFindReferences
-nnoremap <silent> <Plug>(ale_hover) :ALEHover
-nnoremap <silent> <Plug>(ale_documentation) :ALEDocumentation
-nnoremap <silent> <Plug>(ale_rename) :ALERename
+nmap gx <Plug>NetrwBrowseX
 nnoremap <silent> <C-Bslash> :TmuxNavigatePrevious
+nnoremap <silent> <Plug>(ale_rename) :ALERename
+nnoremap <silent> <Plug>(ale_documentation) :ALEDocumentation
+nnoremap <silent> <Plug>(ale_hover) :ALEHover
+nnoremap <silent> <Plug>(ale_find_references) :ALEFindReferences
+nnoremap <silent> <Plug>(ale_go_to_type_definition_in_vsplit) :ALEGoToTypeDefinitionInVSplit
+nnoremap <silent> <Plug>(ale_go_to_type_definition_in_split) :ALEGoToTypeDefinitionInSplit
+nnoremap <silent> <Plug>(ale_go_to_type_definition_in_tab) :ALEGoToTypeDefinitionInTab
+nnoremap <silent> <Plug>(ale_go_to_type_definition) :ALEGoToTypeDefinition
+nnoremap <silent> <Plug>(ale_go_to_definition_in_vsplit) :ALEGoToDefinitionInVSplit
+nnoremap <silent> <Plug>(ale_go_to_definition_in_split) :ALEGoToDefinitionInSplit
+nnoremap <silent> <Plug>(ale_go_to_definition_in_tab) :ALEGoToDefinitionInTab
+nnoremap <silent> <Plug>(ale_go_to_definition) :ALEGoToDefinition
+nnoremap <silent> <Plug>(ale_fix) :ALEFix
+nnoremap <silent> <Plug>(ale_detail) :ALEDetail
+nnoremap <silent> <Plug>(ale_lint) :ALELint
+nnoremap <silent> <Plug>(ale_reset_buffer) :ALEResetBuffer
+nnoremap <silent> <Plug>(ale_disable_buffer) :ALEDisableBuffer
+nnoremap <silent> <Plug>(ale_enable_buffer) :ALEEnableBuffer
+nnoremap <silent> <Plug>(ale_toggle_buffer) :ALEToggleBuffer
+nnoremap <silent> <Plug>(ale_reset) :ALEReset
+nnoremap <silent> <Plug>(ale_disable) :ALEDisable
+nnoremap <silent> <Plug>(ale_enable) :ALEEnable
+nnoremap <silent> <Plug>(ale_toggle) :ALEToggle
+nnoremap <silent> <Plug>(ale_last) :ALELast
+nnoremap <silent> <Plug>(ale_first) :ALEFirst
+nnoremap <silent> <Plug>(ale_next_wrap_warning) :ALENext -wrap -warning
+nnoremap <silent> <Plug>(ale_next_warning) :ALENext -warning
+nnoremap <silent> <Plug>(ale_next_wrap_error) :ALENext -wrap -error
+nnoremap <silent> <Plug>(ale_next_error) :ALENext -error
+nnoremap <silent> <Plug>(ale_next_wrap) :ALENextWrap
+nnoremap <silent> <Plug>(ale_next) :ALENext
+nnoremap <silent> <Plug>(ale_previous_wrap_warning) :ALEPrevious -wrap -warning
+nnoremap <silent> <Plug>(ale_previous_warning) :ALEPrevious -warning
+nnoremap <silent> <Plug>(ale_previous_wrap_error) :ALEPrevious -wrap -error
+nnoremap <silent> <Plug>(ale_previous_error) :ALEPrevious -error
+nnoremap <silent> <Plug>(ale_previous_wrap) :ALEPreviousWrap
+nnoremap <silent> <Plug>(ale_previous) :ALEPrevious
+onoremap <silent> <Plug>(ale_show_completion_menu) <Nop>
+vnoremap <silent> <Plug>(ale_show_completion_menu) <Nop>
+nnoremap <silent> <Plug>(ale_show_completion_menu) :call ale#completion#RestoreCompletionOptions()
+vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))
+nmap <silent> <Plug>RestoreWinPosn :call RestoreWinPosn()
+nmap <silent> <Plug>SaveWinPosn :call SaveWinPosn()
 map <F8> :!clear; java -ea -cp ../algs4.jar:. %:r
 map <F7> :!clear; javac -cp ../algs4.jar:. %
 nnoremap <C-Right> l
@@ -305,12 +305,12 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 2 - ((1 * winheight(0) + 29) / 58)
+let s:l = 68 - ((48 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-2
-normal! 02|
+68
+normal! 039|
 wincmd w
 argglobal
 2argu
@@ -579,11 +579,11 @@ set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 174 - ((2 * winheight(0) + 14) / 29)
+let s:l = 409 - ((21 * winheight(0) + 14) / 29)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-174
+409
 normal! 0
 wincmd w
 3wincmd w
@@ -607,7 +607,6 @@ if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &so = s:so_save | let &siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :

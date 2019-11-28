@@ -290,7 +290,7 @@ static void test_word_count_with_apostrophes(void)
 
 static void test_word_count_with_quotation(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int index = 0;
    int actual_word_count;
    char *input_text = "Joe can't tell between 'large' and large.";
@@ -389,7 +389,7 @@ static void test_max_length_word(void)
 
 static void test_excessive_length_word(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE();
    int actual_word_count;
    int index = 0;
    char *input_text =
@@ -413,7 +413,7 @@ static void test_excessive_length_word(void)
 
 static void test_max_number_words(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int actual_word_count;
    int index = 0;
    char *input_text =
@@ -493,7 +493,7 @@ static void test_max_number_words(void)
 
 static void test_excessive_number_words(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int actual_word_count;
    int index = 0;
    char *input_text =
