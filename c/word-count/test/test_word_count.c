@@ -66,6 +66,7 @@ static void test_word_count_one_of_each_word(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    // fill in the expected words
    expected_solution[index].count = 1;
@@ -85,7 +86,7 @@ static void test_word_count_one_of_each_word(void)
 
 static void test_word_count_multiple_occurrences_of_a_word(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int index = 0;
    int actual_word_count;
    char *input_text = "one fish two fish red fish blue fish";
@@ -93,6 +94,7 @@ static void test_word_count_multiple_occurrences_of_a_word(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 1;
    strncpy(expected_solution[index++].text, "one", STRING_SIZE);
@@ -117,7 +119,7 @@ static void test_word_count_multiple_occurrences_of_a_word(void)
 
 static void test_word_count_handles_cramped_lists(void)
 {
-   TEST_IGNORE();
+   //TEST_IGNORE();
    int index = 0;
    int actual_word_count;
    char *input_text = "one,two,three";
@@ -125,6 +127,7 @@ static void test_word_count_handles_cramped_lists(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 1;
    strncpy(expected_solution[index++].text, "one", STRING_SIZE);
@@ -143,7 +146,7 @@ static void test_word_count_handles_cramped_lists(void)
 
 static void test_word_count_handles_expanded_lists(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int index = 0;
    int actual_word_count;
    char *input_text = "one,\ntwo,\nthree";
@@ -151,6 +154,7 @@ static void test_word_count_handles_expanded_lists(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 1;
    strncpy(expected_solution[index++].text, "one", STRING_SIZE);
