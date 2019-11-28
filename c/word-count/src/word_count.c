@@ -1,12 +1,15 @@
 #include "word_count.h"
+//#include <stdbool.h>
+// true, false, bool type
 #include <stdio.h>
 // printf
 #include <string.h>
 // strcmp
 #include <ctype.h>
-// isspace
+// isspace, toupper, tolower
 
-#define NEW_WORD_FOUND -77
+#define NEW_WORD_FOUND 77
+#define NOT_A_WORD 88
 
 int increment_word_index(const char *word, word_count_word_t *words);
 
@@ -16,17 +19,18 @@ int word_count(const char *input_text, word_count_word_t * words) {
   // memset(words, 0, sizeof(*words));
   int unique_words = 0;
   char current_word[MAX_WORD_LENGTH + 1] = {0};
-  char c;
+  char c;  // current char
   int i = 0;
   // loop over input_text until end
-  while ((c = *input_text++)) {
+  while ((c = tolower(*input_text++))) {
     // test for end of word
     printf("c: [%c]\n", c);
-    if (isspace(c) || ispunct(c)) {
-      printf("tested for space or EOF: %c\n", c);
+    if (isspace(c) || (ispunct(c) && c != '\'')) {
+      printf("tested for space or punc: [%c]\n", c);
       // add or increment count
       if (increment_word_index(current_word, words) == NEW_WORD_FOUND) {
         unique_words++;
+        printf("unique count: %d\n", unique_words);
       }
       memset(current_word, 0, sizeof(current_word));
       i = 0;
@@ -46,15 +50,16 @@ int word_count(const char *input_text, word_count_word_t * words) {
 }
 
 int increment_word_index(const char *word, word_count_word_t *words) {
-  printf("increment_word_index: %s\n", word);
+  printf("increment_word_index: [%s]\n", word);
+  if (*word == '\0') return NOT_A_WORD;
   // loop over array of structs
   for (int i=0; i<MAX_WORDS; i++) {
     // if word == text, found match, return index
-    printf("word: %s text: %s\n", word, words[i].text);
+    printf("word: [%s] text: [%s] count: [%d]\n", word, words[i].text, words[i].count);
     if (strcmp(word, words[i].text) == 0) {
       // found word
       words[i].count++;
-      return i;
+      return 1;  // not a new word
     }
     // if text is empty, end of word list
     if (*words[i].text == '\0') {
@@ -64,7 +69,7 @@ int increment_word_index(const char *word, word_count_word_t *words) {
       }
       words[i].count = 1;
       // words[i].text[MAX_WORD_LENGTH + 1] = '\0';
-      printf("word: %s text: %s\n", word, words[i].text);
+      printf("word: [%s] text: [%s] count: [%d]\n", word, words[i].text, words[i].count);
       return NEW_WORD_FOUND;
     }
 

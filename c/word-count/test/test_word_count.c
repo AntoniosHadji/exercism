@@ -173,7 +173,7 @@ static void test_word_count_handles_expanded_lists(void)
 
 static void test_word_count_ignore_punctuation(void)
 {
-   TEST_IGNORE();
+//   TEST_IGNORE();
    int index = 0;
    int actual_word_count;
    char *input_text = "car: carpet as java: javascript!!&@$%^&";
@@ -181,6 +181,7 @@ static void test_word_count_ignore_punctuation(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 1;
    strncpy(expected_solution[index++].text, "car", STRING_SIZE);
@@ -205,7 +206,7 @@ static void test_word_count_ignore_punctuation(void)
 
 static void test_word_count_include_numbers(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int index = 0;
    int actual_word_count;
    char *input_text = "testing, 1, 2 testing";
@@ -213,6 +214,7 @@ static void test_word_count_include_numbers(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 2;
    strncpy(expected_solution[index++].text, "testing", STRING_SIZE);
@@ -231,7 +233,7 @@ static void test_word_count_include_numbers(void)
 
 static void test_word_count_normalize_case(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int index = 0;
    int actual_word_count;
    char *input_text = "go Go GO Stop stop";
@@ -239,6 +241,7 @@ static void test_word_count_normalize_case(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 3;
    strncpy(expected_solution[index++].text, "go", STRING_SIZE);
@@ -254,7 +257,7 @@ static void test_word_count_normalize_case(void)
 
 static void test_word_count_with_apostrophes(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int index = 0;
    int actual_word_count;
    char *input_text = "First: don't laugh. Then: don't cry.";
@@ -262,6 +265,7 @@ static void test_word_count_with_apostrophes(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 1;
    strncpy(expected_solution[index++].text, "first", STRING_SIZE);
@@ -294,6 +298,7 @@ static void test_word_count_with_quotation(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 1;
    strncpy(expected_solution[index++].text, "joe", STRING_SIZE);
@@ -321,7 +326,7 @@ static void test_word_count_with_quotation(void)
 
 static void test_word_count_from_example(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int index = 0;
    int actual_word_count;
    char *input_text = "olly olly in come free";
@@ -329,6 +334,7 @@ static void test_word_count_from_example(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 2;
    strncpy(expected_solution[index++].text, "olly", STRING_SIZE);
@@ -350,7 +356,7 @@ static void test_word_count_from_example(void)
 
 static void test_max_length_word(void)
 {
-   TEST_IGNORE();
+   // TEST_IGNORE();
    int actual_word_count;
    int index = 0;
    char *input_text =
@@ -360,6 +366,7 @@ static void test_max_length_word(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 2;
    strncpy(expected_solution[index++].text, "look", STRING_SIZE);
@@ -393,6 +400,8 @@ static void test_excessive_length_word(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
+
    expected_solution[index].count = 1;
    strncpy(expected_solution[index++].text, "look", STRING_SIZE);
 
@@ -414,6 +423,7 @@ static void test_max_number_words(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 1;
    strncpy(expected_solution[index++].text, "once", STRING_SIZE);
@@ -493,6 +503,7 @@ static void test_excessive_number_words(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
+   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 1;
    strncpy(expected_solution[index++].text, "once", STRING_SIZE);

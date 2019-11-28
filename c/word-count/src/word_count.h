@@ -23,5 +23,4 @@ typedef struct word_count_word {
 //           returns a negative number if an error.
 //           words will contain the results up to that point.
 int word_count(const char *input_text, word_count_word_t * words);
-
 #endif
