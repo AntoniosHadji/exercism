@@ -66,7 +66,7 @@ static void test_word_count_one_of_each_word(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
-   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
+   // memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    // fill in the expected words
    expected_solution[index].count = 1;
@@ -94,7 +94,7 @@ static void test_word_count_multiple_occurrences_of_a_word(void)
 
    // build the expected solution
    memset(expected_solution, 0, sizeof(expected_solution));     // clear to start with a known value
-   memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
+   // memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
 
    expected_solution[index].count = 1;
    strncpy(expected_solution[index++].text, "one", STRING_SIZE);

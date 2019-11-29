@@ -13,8 +13,8 @@ int increment_word_index(char * word, word_count_word_t * words);
 
 int word_count(const char * input_text, word_count_word_t * words) {
   // clear to start with a known value
-  // this breaks the test, when added to tests all tests pass
-  // memset(words, 0, sizeof(*words));
+  // TODO: overwrite entire words array to match without setting to zero
+  memset(words, 0, MAX_WORDS);
   int unique_words = 0;
   char current_word[MAX_WORD_LENGTH + 1] = {0};
   char c;  // current char

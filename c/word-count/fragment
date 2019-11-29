@@ -3,3 +3,6 @@
       //       // -1, +1 give previous/next array value via pointer
       // input_text is pointer to char
       //       printf("prior:c:next => [%c]:[%c]:[%c]\n", (input_text-1)[0], c, (input_text+1)[0]);
+
+  this works in test, not in function
+   // memset(actual_solution, 0, sizeof(actual_solution));     // clear to start with a known value
