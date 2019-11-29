@@ -14,4 +14,4 @@ build/
 .vscode/
 .exercism/
 .solution.json
-vimsession
+Session.vim
