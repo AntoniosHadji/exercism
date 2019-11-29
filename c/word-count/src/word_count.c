@@ -14,21 +14,23 @@ int increment_word_index(char * word, word_count_word_t * words);
 int word_count(const char * input_text, word_count_word_t * words) {
   // clear to start with a known value
   for (int i=0; i<MAX_WORDS; i++) {
-    strncpy(words[i].text, "", MAX_WORD_LENGTH + 1);
+    strncpy(words[i].text, "", MAX_WORD_LENGTH);
     words[i].count = 0;
   }
   int unique_words = 0;
   char current_word[MAX_WORD_LENGTH + 1] = {0};
-  char c;  // current char
+  char c;
   int i = 0;
 
   // loop over input_text until end
   while ((c = tolower(*input_text++))) {
     // printf("c: [%c]\n", c);
-    // test for if this c is part of a quoted word, if so skip quotes
+    // test if this c is part of a quoted word, if so skip quotes
     if (c == '\'') {
       char pre = (input_text-2)[0];
       char post = (input_text)[0];
+      // previous character is space, next char is alphanumeric == opening quote
+      // previos character is alphanumeric, next char is space == closing  quote
       if ((isspace(pre) && isalnum(post)) || (isalnum(pre) && isspace(post))) {
           continue;
       }
@@ -60,10 +62,10 @@ int word_count(const char * input_text, word_count_word_t * words) {
     }
   }
 
-  printf("pre-return unique count: %d\n", unique_words);
-  for (int i=0; i<MAX_WORDS; i++) {
-    printf("text: [%s] count: [%d]\n", words[i].text, words[i].count);
-  }
+  //printf("pre-return unique count: %d\n", unique_words);
+  //for (int i=0; i<MAX_WORDS; i++) {
+  //  printf("text: [%s] count: [%d]\n", words[i].text, words[i].count);
+  //}
   return unique_words;
 }
 
