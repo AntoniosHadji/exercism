@@ -13,8 +13,10 @@ int increment_word_index(char * word, word_count_word_t * words);
 
 int word_count(const char * input_text, word_count_word_t * words) {
   // clear to start with a known value
-  // TODO: overwrite entire words array to match without setting to zero
-  memset(words, 0, MAX_WORDS);
+  for (int i=0; i<MAX_WORDS; i++) {
+    strncpy(words[i].text, "", MAX_WORD_LENGTH + 1);
+    words[i].count = 0;
+  }
   int unique_words = 0;
   char current_word[MAX_WORD_LENGTH + 1] = {0};
   char c;  // current char
