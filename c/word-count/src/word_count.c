@@ -4,7 +4,7 @@
 #include <ctype.h>
 // isspace, ispunct, tolower
 
-// #include <stdio.h>
+#include <stdio.h>
 
 #define NEW_WORD_FOUND 1
 
@@ -37,19 +37,13 @@ int word_count(const char * input_text, word_count_word_t * words) {
     }
 
     if (isalnum(c) || c == '\'') {
+      if (unique_words == MAX_WORDS) return EXCESSIVE_NUMBER_OF_WORDS;
       //copy char to temp word
       current_word[i++] = c;
     } else {
       // count word
-      int rc = 0;
       if (*current_word != '\0') {
-        rc = increment_word_index(current_word, words);
-      }
-
-      if (rc >= 0) {
-        unique_words += rc;
-      } else {
-        return rc;  // EXCESSIVE_NUMBER_OF_WORDS
+        unique_words += increment_word_index(current_word, words);
       }
 
       memset(current_word, 0, sizeof(current_word));
@@ -58,9 +52,7 @@ int word_count(const char * input_text, word_count_word_t * words) {
   }
 
   if (*current_word != '\0') {
-    if (increment_word_index(current_word, words) == NEW_WORD_FOUND) {
-      unique_words++;
-    }
+      unique_words += increment_word_index(current_word, words);
   }
 
   return unique_words;
@@ -89,6 +81,6 @@ int increment_word_index(char * word, word_count_word_t * words) {
       return 1;  // found new word
     }
   }
-  // did not find word in list, or empty space
-  return EXCESSIVE_NUMBER_OF_WORDS;
+  // this should never be reached
+  return 1000;
 }
