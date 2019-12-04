@@ -21,7 +21,7 @@ int word_count(const char * input_text, word_count_word_t * words) {
     // return if MAX_WORDS already found
     if (unique_words == MAX_WORDS) return EXCESSIVE_NUMBER_OF_WORDS;
 
-    // if c is alphanumeric, or apostrophe between two letters
+    // if c is alphanumeric, or apostrophe
     if (isalnum(c) || c == '\'') {
       //add char to current word
       current_word[i++] = c;
