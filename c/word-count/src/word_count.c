@@ -34,10 +34,8 @@ int word_count(const char * input_text, word_count_word_t * words) {
       i = 0;
     }
   }
-
   // count/increment last word
   unique_words += increment_word_index(current_word, words);
-
   return unique_words;
 }
 
@@ -52,11 +50,11 @@ int increment_word_index(char * word, word_count_word_t * words) {
   int length = strlen(word);
   if (length > 0) {
     // are there quotes around word? if so, strip
-    if (word[0] == '\'' && word[length - 1] == '\'') {
+    if (*word == '\'' && *(word+(--length)) == '\'') {
       // move pointer to next char
       word++;
       // remove last char - 2 because shifting first char shortens length
-      word[length - 2] = '\0';
+      word[--length] = '\0';
     }
     // loop over array of structs
     for (int i=0; i<MAX_WORDS; i++) {
