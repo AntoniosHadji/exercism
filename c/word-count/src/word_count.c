@@ -52,7 +52,7 @@ int increment_word_index(char * word, word_count_word_t * words) {
   int length = strlen(word);
   if (length > 0) {
     // are there quotes around word? if so, strip
-    if (word[0] == '\'' && word[length -1] == '\'') {
+    if (word[0] == '\'' && word[length - 1] == '\'') {
       // move pointer to next char
       word++;
       // remove last char - 2 because shifting first char shortens length
