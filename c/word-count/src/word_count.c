@@ -53,7 +53,7 @@ int increment_word_index(char * word, word_count_word_t * words) {
     if (*word == '\'' && *(word+(--length)) == '\'') {
       // move pointer to next char
       word++;
-      // remove last char - 2 because shifting first char shortens length
+      // remove last char
       word[--length] = '\0';
     }
     // loop over array of structs
