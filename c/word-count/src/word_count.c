@@ -21,18 +21,6 @@ int word_count(const char * input_text, word_count_word_t * words) {
     // return if MAX_WORDS already found
     if (unique_words == MAX_WORDS) return EXCESSIVE_NUMBER_OF_WORDS;
 
-    // test if c is part of a quoted word, if so skip quotes
-    if (c == '\'') {
-      // input_text has already been incremented to next char
-      char pre = *(input_text-2);  // char prior to c
-      char post = *input_text;     // next char after c
-      // previous character is space, next char is alphanumeric == opening quote
-      // previous character is alphanumeric, next char is space == closing  quote
-      if ((isspace(pre) && isalnum(post)) || (isalnum(pre) && isspace(post))) {
-          continue;
-      }
-    }
-
     // if c is alphanumeric, or apostrophe between two letters
     if (isalnum(c) || c == '\'') {
       //add char to current word
@@ -61,7 +49,15 @@ void clear_array(word_count_word_t * words) {
 }
 
 int increment_word_index(char * word, word_count_word_t * words) {
-  if (strlen(word) > 0) {  // this also worked != '\0') {
+  int length = strlen(word);
+  if (length > 0) {
+    // are there quotes around word? if so, strip
+    if (word[0] == '\'' && word[length -1] == '\'') {
+      // move pointer to next char
+      word++;
+      // remove last char - 2 because shifting first char shortens length
+      word[length - 2] = '\0';
+    }
     // loop over array of structs
     for (int i=0; i<MAX_WORDS; i++) {
       // if word == text, found match, return index
