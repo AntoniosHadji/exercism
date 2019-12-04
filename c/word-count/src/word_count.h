@@ -24,4 +24,8 @@ typedef struct word_count_word {
 //           words will contain the results up to that point.
 int word_count(const char *input_text, word_count_word_t * words);
 
+int increment_word_index(char * , word_count_word_t * );
+void clear_array(word_count_word_t * );
+
+
 #endif

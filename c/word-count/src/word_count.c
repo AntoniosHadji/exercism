@@ -5,10 +5,6 @@
 // isspace, tolower, isalnum
 
 
-int increment_word_index(char * , word_count_word_t * );
-void clear_array(word_count_word_t * );
-
-
 int word_count(const char * input_text, word_count_word_t * words) {
   // clear to start with a known empty array
   clear_array(words);
