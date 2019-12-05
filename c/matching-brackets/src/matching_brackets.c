@@ -1,5 +1,4 @@
 #include "matching_brackets.h"
-#include <stdio.h>
 
 // defined placeholders for characters to be matched
 #define OP '('
@@ -8,11 +7,14 @@
 #define CS ']'
 #define OB '{'
 #define CB '}'
+#define SQUARE 0
+#define BRACE 1
+#define PAREN 2
 
 bool is_paired(const char *input) {
   // declare char to hold current character
   char c;
-  // TODO: track last opened bracket
+  // track last opened bracket
   char sequence[50] = {0};
   int index = 0;
   // create tracking array to count (,),[,],{,}
@@ -21,12 +23,12 @@ bool is_paired(const char *input) {
   while ((c = *input++)) {
     switch (c) {
     case OS:
-      counter[0] += 1;
+      counter[SQUARE] += 1;
       sequence[index++] = OS;
       break;
     case CS:
-      if (counter[0] > 0 && sequence[index-1] == OS) {
-        counter[0] -= 1;
+      if (counter[SQUARE] > 0 && sequence[index-1] == OS) {
+        counter[SQUARE] -= 1;
         index--;
       } else {
         // out of order return false
@@ -34,12 +36,12 @@ bool is_paired(const char *input) {
       }
       break;
     case OB:
-      counter[1] += 1;
+      counter[BRACE] += 1;
       sequence[index++] = OB;
       break;
     case CB:
-      if (counter[1] > 0 && sequence[index-1] == OB) {
-        counter[1] -= 1;
+      if (counter[BRACE] > 0 && sequence[index-1] == OB) {
+        counter[BRACE] -= 1;
         index--;
       } else {
         // out of order return false
@@ -47,12 +49,12 @@ bool is_paired(const char *input) {
       }
       break;
     case OP:
-      counter[2] += 1;
+      counter[PAREN] += 1;
       sequence[index++] = OP;
       break;
     case CP:
-      if (counter[2] > 0 && sequence[index-1] == OP) {
-        counter[2] -= 1;
+      if (counter[PAREN] > 0 && sequence[index-1] == OP) {
+        counter[PAREN] -= 1;
         index--;
       } else {
         // out of order return false
