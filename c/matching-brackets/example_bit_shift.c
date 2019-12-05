@@ -41,3 +41,5 @@ bool is_paired(const char * t) {
 //     }
 //     return !x;
 // }
+//
+// same bit operators work in python with same meaning
