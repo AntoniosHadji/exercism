@@ -3,6 +3,7 @@
 // strcmp, strlen
 #include <ctype.h>
 // isspace, tolower, isalnum
+#include <stdio.h>
 
 
 int word_count(const char * input_text, word_count_word_t * words) {
@@ -25,8 +26,10 @@ int word_count(const char * input_text, word_count_word_t * words) {
     if (isalnum(c) || c == '\'') {
       //add char to current word
       current_word[i++] = c;
-    } else {
-      // c is a word boundary character
+    }
+
+    // c is a word boundary character, or finished with input_text
+    if ((!isalnum(c) && c != '\'') || *input_text == '\0') {
       // count word if new, or increment existing word
       unique_words += increment_word_index(current_word, words);
       // reset variables for next word
@@ -34,8 +37,7 @@ int word_count(const char * input_text, word_count_word_t * words) {
       i = 0;
     }
   }
-  // count/increment last word
-  unique_words += increment_word_index(current_word, words);
+
   return unique_words;
 }
 
