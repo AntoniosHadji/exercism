@@ -12,6 +12,7 @@ CFLAGS += -pedantic
 CFLAGS += -Werror
 CFLAGS += -Wmissing-declarations
 CFLAGS += -DUNITY_SUPPORT_64
+CFLAGS += -pg
 
 ASANFLAGS  = -fsanitize=address
 ASANFLAGS += -fno-common
