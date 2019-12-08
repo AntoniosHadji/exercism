@@ -8,7 +8,7 @@
 
 int word_count(const char * input_text, word_count_word_t * words) {
   // clear to start with a known empty array
-  clear_array(words);
+  memset(words, 0, MAX_WORDS * sizeof(word_count_word_t));
 
   int unique_words = 0;
   char current_word[MAX_WORD_LENGTH + 1] = {0};
@@ -30,48 +30,45 @@ int word_count(const char * input_text, word_count_word_t * words) {
 
     // c is a word boundary character, or finished with input_text
     if ((!isalnum(c) && c != '\'') || *input_text == '\0') {
-      // count word if new, or increment existing word
-      unique_words += increment_word_index(current_word, words);
-      // reset variables for next word
-      memset(current_word, 0, sizeof(current_word));
-      i = 0;
+      if (*current_word != '\0') {
+        // count word if new, or increment existing word
+        unique_words += increment_word_index(current_word, words);
+        // reset variables for next word
+        memset(current_word, 0, sizeof(current_word));
+        i = 0;
+      }
     }
   }
 
   return unique_words;
 }
 
-void clear_array(word_count_word_t * words) {
-  for (int i=0; i<MAX_WORDS; i++) {
-    strncpy(words[i].text, "\0", MAX_WORD_LENGTH);
-    words[i].count = 0;
+char * strip_quotes(char * word) {
+  int length = strlen(word);
+  // are there quotes around word? if so, strip
+  if (*word == '\'' && *(word+(--length)) == '\'') {
+    // move pointer to next char
+    word++;
+    // remove last char
+    word[--length] = '\0';
   }
+  return word;
 }
 
 int increment_word_index(char * word, word_count_word_t * words) {
-  int length = strlen(word);
-  if (length > 0) {
-    // are there quotes around word? if so, strip
-    if (*word == '\'' && *(word+(--length)) == '\'') {
-      // move pointer to next char
-      word++;
-      // remove last char
-      word[--length] = '\0';
+  word = strip_quotes(word);
+  for (int i=0; i<MAX_WORDS; i++) {
+    // if word == text, found match, return index
+    if (strcmp(word, words[i].text) == 0) {
+      // found word
+      words[i].count++;
+      return 0;  // did not find a new word
     }
-    // loop over array of structs
-    for (int i=0; i<MAX_WORDS; i++) {
-      // if word == text, found match, return index
-      if (strcmp(word, words[i].text) == 0) {
-        // found word
-        words[i].count++;
-        return 0;  // did not find a new word
-      }
-      // if text is empty, end of word list, add new word if word not empty
-      if (*words[i].text == '\0') {
-        strncpy(words[i].text, word, MAX_WORD_LENGTH);
-        words[i].count = 1;
-        return 1;  // found new word
-      }
+    // if text is empty, end of word list, add new word if word not empty
+    if (*words[i].text == '\0') {
+      strncpy(words[i].text, word, MAX_WORD_LENGTH);
+      words[i].count = 1;
+      return 1;  // found new word
     }
   }
   // if strlen <= 0 no word, return and do not increment any word

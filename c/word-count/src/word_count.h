@@ -25,7 +25,6 @@ typedef struct word_count_word {
 int word_count(const char *input_text, word_count_word_t * words);
 
 int increment_word_index(char * , word_count_word_t * );
-void clear_array(word_count_word_t * );
 
-
+char * strip_quotes(char * word);
 #endif
