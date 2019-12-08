@@ -4,6 +4,9 @@
 #include "vendor/unity.h"
 #include "../src/word_count.h"
 
+#include <time.h>
+#include <stdio.h>
+
 #define STRING_SIZE (MAX_WORD_LENGTH + 1)
 
 word_count_word_t actual_solution[MAX_WORDS];
@@ -561,23 +564,30 @@ static void test_excessive_number_words(void)
 
 int main(void)
 {
+
    UnityBegin("test/test_word_count.c");
+  double startTime = (double)clock()/CLOCKS_PER_SEC;
+  for (int x=0; x<100000;x++) {
+     RUN_TEST(test_word_count_one_word);
+     RUN_TEST(test_word_count_one_of_each_word);
+     RUN_TEST(test_word_count_multiple_occurrences_of_a_word);
+     RUN_TEST(test_word_count_handles_cramped_lists);
+     RUN_TEST(test_word_count_handles_expanded_lists);
+     RUN_TEST(test_word_count_ignore_punctuation);
+     RUN_TEST(test_word_count_include_numbers);
+     RUN_TEST(test_word_count_normalize_case);
+     RUN_TEST(test_word_count_with_apostrophes);
+     RUN_TEST(test_word_count_with_quotation);
+     RUN_TEST(test_word_count_from_example);
+     RUN_TEST(test_max_length_word);
+     RUN_TEST(test_excessive_length_word);
+     RUN_TEST(test_max_number_words);
+     RUN_TEST(test_excessive_number_words);
+  }
 
-   RUN_TEST(test_word_count_one_word);
-   RUN_TEST(test_word_count_one_of_each_word);
-   RUN_TEST(test_word_count_multiple_occurrences_of_a_word);
-   RUN_TEST(test_word_count_handles_cramped_lists);
-   RUN_TEST(test_word_count_handles_expanded_lists);
-   RUN_TEST(test_word_count_ignore_punctuation);
-   RUN_TEST(test_word_count_include_numbers);
-   RUN_TEST(test_word_count_normalize_case);
-   RUN_TEST(test_word_count_with_apostrophes);
-   RUN_TEST(test_word_count_with_quotation);
-   RUN_TEST(test_word_count_from_example);
-   RUN_TEST(test_max_length_word);
-   RUN_TEST(test_excessive_length_word);
-   RUN_TEST(test_max_number_words);
-   RUN_TEST(test_excessive_number_words);
-
+  double endTime = (double)clock()/CLOCKS_PER_SEC;
+  double timeElapsed = endTime - startTime;
+  printf("time: %f\n", timeElapsed);
    return UnityEnd();
+
 }
