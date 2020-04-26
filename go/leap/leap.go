@@ -11,9 +11,13 @@ package leap
 
 // IsLeapYear  return true if year is a leap year, otherwise false
 func IsLeapYear(year int) bool {
-	if (year%4 != 0) || (year%100 == 0 && year%400 != 0) {
-		return false
-	}
+	// 395 ns/op
+	// if (year%4 != 0) || (year%100 == 0 && year%400 != 0) {
+	// 	return false
+	// }
 
-	return true
+	// return true
+
+	// 310 ns/op
+	return year%4 == 0 && (year%100 != 0 || year%400 == 0)
 }
