@@ -1,6 +1,7 @@
 import unittest
 
-from binary_search import binary_search
+# from binary_search import binary_search
+from binary_search2 import binary_search
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 
